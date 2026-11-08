@@ -1,0 +1,64 @@
+/* Deliberately scattered objects, with no cards or surrounding UI. */
+.hub { padding-bottom:0; }
+.hub .intro-copy { padding-bottom:35px; }
+.easter-scatter { grid-column:1/-1; height:135px; position:relative; }
+.hub .egg-object {
+  display:flex!important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  position:absolute!important;
+  inset:auto!important;
+  width:104px;
+  height:110px;
+  padding:6px;
+  background:none;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  backdrop-filter:none;
+  transform:none!important;
+  opacity:1;
+  cursor:pointer;
+  z-index:6;
+  transition:translate .2s;
+  animation:none;
+}
+.hub .egg-object svg { display:block; width:84px; height:78px; flex-shrink:0; transition:scale .2s; }
+.hub .egg-object span { display:block; position:static; inset:auto; transform:none; max-width:none; width:auto; text-align:center; font-size:10px; color:#c8dfdc; letter-spacing:.04em; }
+.hub .egg-object:hover { translate:0 -3px; }
+.hub .egg-object:hover svg { scale:1.08; }
+.hub .egg-object:hover span { color:#fff; text-decoration:underline; text-underline-offset:4px; }
+.hub .egg-object:focus-visible { outline:2px solid #c6ded5; outline-offset:3px; border-radius:12px; }
+/* These three live in clear gaps around the first two columns. */
+.hub .decor-ball { left:47%!important; top:20px!important; }
+.hub .decor-book { right:-45px!important; top:70px!important; }
+.hub .decor-game { left:34%!important; top:365px!important; }
+.hub .decor-food { left:12%!important; bottom:5px!important; }
+.hub .decor-valorant { right:16%!important; bottom:5px!important; color:#df9291; }
+/* Let the first three use the hero's coordinate system. */
+.easter-scatter { position:static; }
+.hub .decor-food,.hub .decor-valorant { top:auto!important; }
+.bubble-field { margin-top:55px; }
+@media(max-width:1100px) and (min-width:721px) {
+  .hub .decor-ball { left:43%!important; top:2px!important; }
+  .hub .decor-game { left:27%!important; top:455px!important; }
+  .hub .decor-book { right:-38px!important; top:45px!important; }
+  .hub .egg-object { width:82px; height:96px; }
+  .hub .egg-object svg { width:68px; height:64px; }
+  .bubble-field { margin-top:110px; }
+}
+@media(max-width:720px) {
+  .hub .intro-copy { padding-bottom:0; }
+  .easter-scatter { position:relative; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px 8px; height:auto; padding:36px 0 25px; align-items:start; }
+  .hub .egg-object { position:relative!important; left:auto!important; right:auto!important; top:auto!important; bottom:auto!important; width:100%; height:110px; padding:4px; }
+  .hub .egg-object svg { width:80px; height:78px; }
+  .hub .decor-game { margin-top:25px; }
+  .hub .decor-book { margin-top:25px; }
+  .hub .decor-food { margin-top:3px; }
+  .hub .decor-valorant { grid-column:3; margin-top:5px; }
+  .hub .decor-valorant svg { padding:8px; }
+  .bubble-field { margin-top:36px; }
+}
+@media(prefers-reduced-motion:reduce) { .hub .egg-object,.hub .egg-object svg { transition:none; } }

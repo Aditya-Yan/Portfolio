@@ -1,0 +1,14 @@
+{
+  "name": "aditya-portfolio",
+  "private": true,
+  "scripts": {
+    "build:effects": "esbuild src/react-bits/main.jsx --bundle --minify --format=esm --jsx=automatic --outfile=assets/react-bits.js"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

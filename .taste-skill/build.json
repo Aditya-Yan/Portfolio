@@ -1,0 +1,11 @@
+{
+ "page": "index.html",
+ "url": null,
+ "root": null,
+ "kind": "software",
+ "category": "software engineer portfolio",
+ "primary": "See projects",
+ "rounds": 3,
+ "start": "2026-11-08T06:31:32.880Z",
+ "by": "gate.mjs --start"
+}

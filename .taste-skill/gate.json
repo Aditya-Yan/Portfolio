@@ -1,0 +1,1525 @@
+{
+ "start": "2026-11-08T06:31:32.880Z",
+ "round": 1,
+ "idle": 0,
+ "errors": 0,
+ "status": "fail",
+ "history": [
+  {
+   "at": "2026-11-08T06:33:15.857Z",
+   "mode": "manual",
+   "status": "fail",
+   "fails": 40,
+   "round": 1,
+   "reused": false,
+   "stopHookActive": false
+  }
+ ],
+ "max": 3,
+ "marker": {
+  "page": "index.html",
+  "url": null,
+  "root": null,
+  "kind": "software",
+  "category": "software engineer portfolio",
+  "primary": "See projects",
+  "rounds": 3,
+  "start": "2026-11-08T06:31:32.880Z",
+  "by": "gate.mjs --start"
+ },
+ "manual": true,
+ "roundKey": "8f6e7575c2ef9443:da39a3ee",
+ "roundFree": false,
+ "idleFree": false,
+ "blockKey": null,
+ "fp": "8f6e7575c2ef9443",
+ "page": "index.html",
+ "found": {
+  "fails": [
+   {
+    "check": "hero-fill",
+    "where": "main#main > div.ocean-life",
+    "msg": "the next section shows on the first screen: it starts at 58px on a 900px screen (the hero ends at 971px)",
+    "fix": "let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "hero-fill"
+    ],
+    "wheres": [
+     "main#main > div.ocean-life"
+    ]
+   },
+   {
+    "check": "flush",
+    "where": "main#main > div.decor-item.decor-wave > svg",
+    "msg": "div.decor-item.decor-wave and div.topbar run together: -169px between their content, on one ground",
+    "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "flush"
+    ],
+    "wheres": [
+     "main#main > div.decor-item.decor-wave > svg"
+    ]
+   },
+   {
+    "check": "no-visual",
+    "where": "main#main > div.ocean-life",
+    "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "no-visual"
+    ],
+    "wheres": [
+     "main#main > div.ocean-life"
+    ]
+   },
+   {
+    "check": "no-visual",
+    "where": "main#main > div.ocean-wave.w1",
+    "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "no-visual"
+    ],
+    "wheres": [
+     "main#main > div.ocean-wave.w1"
+    ]
+   },
+   {
+    "check": "no-visual",
+    "where": "main#main > div.ocean-wave.w2",
+    "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "no-visual"
+    ],
+    "wheres": [
+     "main#main > div.ocean-wave.w2"
+    ]
+   },
+   {
+    "check": "no-visual",
+    "where": "main#main > div.ocean-wave.w3",
+    "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "no-visual"
+    ],
+    "wheres": [
+     "main#main > div.ocean-wave.w3"
+    ]
+   },
+   {
+    "check": "cta",
+    "where": "div#react-bits-ocean",
+    "msg": "the hero has no button (the nav's does not count)",
+    "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "cta"
+    ],
+    "wheres": [
+     "div#react-bits-ocean"
+    ]
+   },
+   {
+    "check": "tilt",
+    "where": "main#main > div.ocean-life > div.sea-creature.shrimp-one",
+    "msg": "rotated -15.0° (and 1 more like it: div.ocean-wave.w1)",
+    "fix": "set it straight",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "tilt"
+    ],
+    "wheres": [
+     "main#main > div.ocean-life > div.sea-creature.shrimp-one"
+    ]
+   },
+   {
+    "check": "tilt",
+    "where": "main#main > div.ocean-wave.w2",
+    "msg": "rotated 3.0°",
+    "fix": "set it straight",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "tilt"
+    ],
+    "wheres": [
+     "main#main > div.ocean-wave.w2"
+    ]
+   },
+   {
+    "check": "empty-area",
+    "where": "main#main > div.ocean-life",
+    "msg": "93% of the section is empty: 32px above its first content, 544px of empty rows between its content, 34% beside content that covers under half the container, in its 971px of rows (WARN over 35%, FAIL over 50%)",
+    "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "empty-area"
+    ],
+    "wheres": [
+     "main#main > div.ocean-life"
+    ]
+   },
+   {
+    "check": "empty-area",
+    "where": "main#main > div.ocean-wash",
+    "msg": "the section shows no content at all: 699px of ground",
+    "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "empty-area"
+    ],
+    "wheres": [
+     "main#main > div.ocean-wash"
+    ]
+   },
+   {
+    "check": "empty-area",
+    "where": "main#main > div.ocean-wave.w1",
+    "msg": "the section shows no content at all: 430px of ground",
+    "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "empty-area"
+    ],
+    "wheres": [
+     "main#main > div.ocean-wave.w1"
+    ]
+   },
+   {
+    "check": "empty-area",
+    "where": "main#main > div.ocean-wave.w2",
+    "msg": "the section shows no content at all: 370px of ground",
+    "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "empty-area"
+    ],
+    "wheres": [
+     "main#main > div.ocean-wave.w2"
+    ]
+   },
+   {
+    "check": "empty-area",
+    "where": "main#main > div.ocean-wave.w3",
+    "msg": "the section shows no content at all: 340px of ground",
+    "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "empty-area"
+    ],
+    "wheres": [
+     "main#main > div.ocean-wave.w3"
+    ]
+   },
+   {
+    "check": "hero-screen",
+    "where": "main#main > div.ocean-wash",
+    "msg": "the hero ends at 583px on a 900px screen, 317px above the fold: it ends at the fold, 1px either way (SR-1)",
+    "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "hero-screen"
+    ],
+    "wheres": [
+     "main#main > div.ocean-wash"
+    ]
+   },
+   {
+    "check": "hero-screen",
+    "where": "div#react-bits-ocean \"Pause ocean motion\"",
+    "msg": "900px of the next section shows on the first screen (from 0px on a 900px screen): nothing below the hero shows at load (SR-1)",
+    "fix": "end the hero at the fold so nothing of the next section shows at load (hero height: 100svh)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "hero-screen"
+    ],
+    "wheres": [
+     "div#react-bits-ocean \"Pause ocean motion\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "main#main > div.decor-item.decor-wave",
+    "msg": "the section is 40px tall (0 screens), 860px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
+    "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height"
+    ],
+    "wheres": [
+     "main#main > div.decor-item.decor-wave",
+     "main#main > div.topbar \"A Aditya Yanamala Software engineer · bu\"",
+     "main#main > div.ocean-wave.w3",
+     "main#main > div.ocean-wave.w1",
+     "main#main > div.ocean-wave.w2",
+     "main#main > section.hub.hero \"Software, with a human touch Software en\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "div#react-bits-ocean \"Pause ocean motion\"",
+    "msg": "the section's content does not fit it: its lowest content ends 963px below its top, past 899px (the section less 72px of bottom padding) (and 2 more like it: \"A Aditya Yanamala Softwa\", main#main > div.ocean-life) (SR-2)",
+    "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height"
+    ],
+    "wheres": [
+     "div#react-bits-ocean \"Pause ocean motion\""
+    ]
+   },
+   {
+    "check": "section-air",
+    "where": "main#main > div.ocean-life",
+    "msg": "the section shows no content: its content fills 0% of its 971px (55% or more) (SR-3)",
+    "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-air"
+    ],
+    "wheres": [
+     "main#main > div.ocean-life"
+    ]
+   },
+   {
+    "check": "section-air",
+    "where": "main#main > div.decor-item.decor-wave",
+    "msg": "the section shows no content: its content fills 0% of its 40px (55% or more) (SR-3)",
+    "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-air"
+    ],
+    "wheres": [
+     "main#main > div.decor-item.decor-wave"
+    ]
+   },
+   {
+    "check": "section-air",
+    "where": "main#main > div.ocean-wave.w1",
+    "msg": "the section shows no content: its content fills 0% of its 430px (55% or more) (and 4 more like it: main#main > div.ocean-wave.w2, main#main > div.ocean-wave.w3, \"Pause ocean motion\") (SR-3)",
+    "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-air"
+    ],
+    "wheres": [
+     "main#main > div.ocean-wave.w1"
+    ]
+   },
+   {
+    "check": "section-air",
+    "where": "main#main > section.hub.hero > div.bubble-field \"✦ About Me Who I am, what drives me, and\"",
+    "msg": "a top border across 97% of the container, between the section's content: sections and their parts are told apart by air and ground, not lines (SR-3)",
+    "fix": "take the rule out: sections and their parts are parted by their ground and the air between them",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-air"
+    ],
+    "wheres": [
+     "main#main > section.hub.hero > div.bubble-field \"✦ About Me Who I am, what drives me, and\""
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "div#react-bits-ocean \"Pause ocean motion\"",
+    "msg": "a <div> sits directly in <main>: every part of <main> is a <section> (SR-4)",
+    "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section"
+    ],
+    "wheres": [
+     "div#react-bits-ocean \"Pause ocean motion\""
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "main#main > div.ocean-life",
+    "msg": "a <div> sits directly in <main>: every part of <main> is a <section> (SR-4)",
+    "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section"
+    ],
+    "wheres": [
+     "main#main > div.ocean-life",
+     "main#main > div.ocean-wash"
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "main#main > div.topbar \"A Aditya Yanamala Software engineer · bu\"",
+    "msg": "the content of section 4 runs 72px from the left and 27px from the right (read from its outermost blocks: no .wrap): 72 and 27px are not one margin (one container, equal margins, 2px either way) (SR-6)",
+    "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "main#main > div.topbar \"A Aditya Yanamala Software engineer · bu\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "main#main > section.hub.hero \"Software, with a human touch Software en\"",
+    "msg": "the content of section 5 runs 72px from the left and 27px from the right (read from its outermost blocks: no .wrap): 72 and 27px are not one margin (one container, equal margins, 2px either way) (SR-6)",
+    "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "main#main > section.hub.hero \"Software, with a human touch Software en\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "a.skip-link \"Skip to content\"",
+    "msg": "a <a> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+    "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "a.skip-link \"Skip to content\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "main#main > div.ocean-wash",
+    "msg": "the section needs exactly one in-flow child .wrap (it has 0 in-flow children, 0 .wrap) (and 16 more like it: \"Pause ocean motion\", div#react-bits-ocean > div.portfolio-waves, \"Pause ocean motion\") (SR-6)",
+    "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "main#main > div.ocean-wash"
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "section.hub.hero > div.centerpiece > div.center-name > p.workplaces-label \"Where I’ve worked\"",
+    "msg": "1 text block starts on a left line at x 1072, 1000px from the container's left: text starts on the container's left, or on one split line (x 641, 755, 868) (SR-6)",
+    "fix": "start the text on the container's left, or on the one split line every split shares",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "section.hub.hero > div.centerpiece > div.center-name > p.workplaces-label \"Where I’ve worked\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "section.hub.hero > div.centerpiece > div.center-name > h2 \"Aditya ReddyYanamala\"",
+    "msg": "1 text block starts on a left line at x 871, 799px from the container's left: text starts on the container's left, or on one split line (x 641, 755, 868) (and 1 more like it: \"Aditya ReddyYanamala\") (SR-6)",
+    "fix": "start the text on the container's left, or on the one split line every split shares",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "section.hub.hero > div.centerpiece > div.center-name > h2 \"Aditya ReddyYanamala\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "div#react-bits-ocean > div.portfolio-waves > div.waves > canvas.waves__canvas",
+    "msg": "a <canvas> over half the container wide runs 0-1440px, not on the container's lines at 72-1413px (SR-6)",
+    "fix": "run the picture or box from the container's left line to its right line, or put it in a row or a split",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "div#react-bits-ocean > div.portfolio-waves > div.waves > canvas.waves__canvas"
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "main#main > section.hub.hero > div.bubble-field \"✦ About Me Who I am, what drives me, and\"",
+    "msg": "a box over half the container wide runs 72-1368px, not on the container's lines at 72-1413px (SR-6)",
+    "fix": "run the picture or box from the container's left line to its right line, or put it in a row or a split",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "main#main > section.hub.hero > div.bubble-field \"✦ About Me Who I am, what drives me, and\""
+    ]
+   },
+   {
+    "check": "collide",
+    "where": "div#react-bits-ocean > div.portfolio-waves > div.waves > canvas.waves__canvas",
+    "msg": "the words \"A\" and the picture div.waves > canvas.waves__canvas of another section lie in one place: the picture runs out of its section, which is shorter than what it holds",
+    "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+    "widths": [
+     390,
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "collide"
+    ],
+    "wheres": [
+     "div#react-bits-ocean > div.portfolio-waves > div.waves > canvas.waves__canvas"
+    ]
+   },
+   {
+    "check": "collide",
+    "where": "main#main > div.ocean-life > div.sea-creature.shrimp-two > svg",
+    "msg": "the words \"A LITTLE ABOUT ME\" and the picture div.sea-creature.shrimp-two > svg of another section lie in one place: the picture runs out of its section, which is shorter than what it holds",
+    "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "collide"
+    ],
+    "wheres": [
+     "main#main > div.ocean-life > div.sea-creature.shrimp-two > svg"
+    ]
+   },
+   {
+    "check": "top-stagger",
+    "where": "main#main > section.hub.hero > div.easter-scatter \"Click me Click me Click me Click me Clic\"",
+    "msg": "3 boxes side by side start at different heights (+0, +25, +3px)",
+    "fix": "align the tops of the boxes in the row (one floor, one ceiling)",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "top-stagger"
+    ],
+    "wheres": [
+     "main#main > section.hub.hero > div.easter-scatter \"Click me Click me Click me Click me Clic\""
+    ]
+   },
+   {
+    "check": "off-grid",
+    "where": "section.hub.hero > div.easter-scatter > button.decor-item.decor-ball > svg",
+    "msg": "left edge at 38.5px, 14.5px off the page margin at 24px (7 elements); 1 more in this section off the grid too (svg at 38.5px)",
+    "fix": "move it onto the page margin, or the column edge its section uses",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-grid"
+    ],
+    "wheres": [
+     "section.hub.hero > div.easter-scatter > button.decor-item.decor-ball > svg"
+    ]
+   },
+   {
+    "check": "hole",
+    "where": "main#main > div.ocean-life",
+    "msg": "an empty hole 288x1472px inside the section (174% of the screen's height), with content above and below it",
+    "fix": "close the empty space: move the content together, or give the space the visual it lacks",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "hole"
+    ],
+    "wheres": [
+     "main#main > div.ocean-life"
+    ]
+   },
+   {
+    "check": "collide",
+    "where": "main#main > div.ocean-life > div.sea-creature.shrimp-one > svg",
+    "msg": "the words \"Click me\" and the picture div.sea-creature.shrimp-one > svg of another section lie in one place: the picture runs out of its section, which is shorter than what it holds",
+    "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "collide"
+    ],
+    "wheres": [
+     "main#main > div.ocean-life > div.sea-creature.shrimp-one > svg"
+    ]
+   },
+   {
+    "check": "off-viewport",
+    "where": "a.skip-link \"Skip to content\"",
+    "msg": "at 320px wide it runs 999px past the screen's left edge (cut there: the page clips what runs past it)",
+    "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+    "widths": [
+     320
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-viewport"
+    ],
+    "wheres": [
+     "a.skip-link \"Skip to content\""
+    ]
+   },
+   {
+    "check": "container",
+    "where": "page",
+    "msg": "no .wrap",
+    "fix": "put the content in one .wrap",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "container"
+    ],
+    "wheres": [
+     "page"
+    ]
+   }
+  ],
+  "warns": [
+   {
+    "check": "flush",
+    "where": "main#main > div.topbar > div.top-actions > a.top-link \"Download resume\"",
+    "msg": "its button sits 26px above the rule on top of section.hub.hero",
+    "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-actions",
+    "where": "(the page)",
+    "msg": "the main action \"See projects\" does not read word for word the same in the nav or hero",
+    "fix": "few actions, one wording: at most 2 in the hero, the main action word for word in nav, hero and close",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "div#react-bits-ocean / main#main > div.ocean-life",
+    "msg": "the sections overlap by 913px",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "main#main > div.decor-item.decor-wave / main#main > div.topbar",
+    "msg": "the sections overlap by 169px",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-length",
+    "where": "main#main > section.hub.hero \"Software engineer. Researcher. Builder.\"",
+    "msg": "1 section over 90 words a screen outside the UI mocks (\"Software engineer. Resea\" 118); 16 words a screen across the page (135 words in 8.2 screens): a tech page says it in about 80 or fewer",
+    "fix": "cut every section to its heading, one line and the product UI: the UI says the rest; no second paragraph, no list of feature sentences",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "visual-caption",
+    "where": "div.center-name > ul.workplaces > li.capital-workplace > span \"Capital One\"",
+    "msg": "a muted 10px line of 1 row sits 15px under the picture headshot.JPG: it reads as a caption: \"Capital One\"; no caption or description under any image, render or visual (house rule)",
+    "fix": "take the line away: no caption or description under, over or on any image, render or visual; a licence credit goes in one footer line",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "share-meta",
+    "where": "head",
+    "msg": "the head lacks an icon: a shared link shows no picture or title of its own",
+    "fix": "copy the head block of starter.html: og tags, twitter:card, the icon and theme-color (references/system.md, Head)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "one-section",
+    "where": "h1#hero-title \"Software engineer.Researcher.Builder.\"",
+    "msg": "the screen at scroll 0px (stride 0) shows 900px of section 3 and the heading of section 5 whole and the content of 2 sections, over 24px each beside section 2: a screen shows one section (another may peek 8px, 24px WARN) (it is in a scroll scene: told as a WARN) (SR-4)",
+    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "tap-size",
+    "where": "a.skip-link \"Skip to content\"",
+    "msg": "a 114x20px tap target: under the 44px a phone needs",
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box",
+    "widths": [
+     390,
+     320
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "cta",
+    "where": "main#main > div.ocean-life",
+    "msg": "a section over 1.5 screens long with no link or button in it",
+    "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "cta",
+    "where": "main#main > div.ocean-wash",
+    "msg": "a section over 1.5 screens long with no link or button in it",
+    "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "photo-weight",
+    "where": "section.hub.hero > div.centerpiece > div.headshot-frame > img.profile-photo \"headshot.JPG\"",
+    "msg": "a photograph is 3x or more wider than drawn on the phone, with no srcset: headshot.JPG is 1538px (453 KB) for a 340px frame; on a phone it arrives late and its frame shows only its ground until then",
+    "fix": "give each photograph srcset and sizes (a 800px and a 1600px file), or a smaller file: the frame never shows empty",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-stat-strip",
+    "msg": "stat strip x1",
+    "fix": "a strip only of figures the brief gives (a price, hours, a count); otherwise put each number in the sentence it proves, or leave it out (references/copy-tells.md)",
+    "widths": [],
+    "from": "copy",
+    "where": "copy x1: \"0 / 10 / 11 / 12 / 13...\"",
+    "exact": false
+   },
+   {
+    "check": "copy-numbered",
+    "msg": "9 step numbers",
+    "fix": "number only steps that happen in order (references/copy-tells.md)",
+    "widths": [],
+    "from": "copy",
+    "where": "(the copy)",
+    "exact": false
+   },
+   {
+    "check": "copy-rhythm",
+    "msg": "35% of sentences are 4 words or fewer",
+    "fix": "join the fragments that carry one thought (references/copy-tells.md)",
+    "widths": [],
+    "from": "copy",
+    "where": "(the copy)",
+    "exact": false
+   }
+  ],
+  "crashed": [],
+  "seconds": {
+   "consistency": 90,
+   "layout": 13
+  }
+ },
+ "open": [
+  {
+   "check": "hero-fill",
+   "where": "main#main > div.ocean-life",
+   "msg": "the next section shows on the first screen: it starts at 58px on a 900px screen (the hero ends at 971px)",
+   "fix": "let the hero fill the first screen alone (min-height: 100svh, less above it): nothing of the next section on load",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "hero-fill"
+   ],
+   "wheres": [
+    "main#main > div.ocean-life"
+   ]
+  },
+  {
+   "check": "flush",
+   "where": "main#main > div.decor-item.decor-wave > svg",
+   "msg": "div.decor-item.decor-wave and div.topbar run together: -169px between their content, on one ground",
+   "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "flush"
+   ],
+   "wheres": [
+    "main#main > div.decor-item.decor-wave > svg"
+   ]
+  },
+  {
+   "check": "no-visual",
+   "where": "main#main > div.ocean-life",
+   "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "no-visual"
+   ],
+   "wheres": [
+    "main#main > div.ocean-life"
+   ]
+  },
+  {
+   "check": "no-visual",
+   "where": "main#main > div.ocean-wave.w1",
+   "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "no-visual"
+   ],
+   "wheres": [
+    "main#main > div.ocean-wave.w1"
+   ]
+  },
+  {
+   "check": "no-visual",
+   "where": "main#main > div.ocean-wave.w2",
+   "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "no-visual"
+   ],
+   "wheres": [
+    "main#main > div.ocean-wave.w2"
+   ]
+  },
+  {
+   "check": "no-visual",
+   "where": "main#main > div.ocean-wave.w3",
+   "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "no-visual"
+   ],
+   "wheres": [
+    "main#main > div.ocean-wave.w3"
+   ]
+  },
+  {
+   "check": "cta",
+   "where": "div#react-bits-ocean",
+   "msg": "the hero has no button (the nav's does not count)",
+   "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "cta"
+   ],
+   "wheres": [
+    "div#react-bits-ocean"
+   ]
+  },
+  {
+   "check": "tilt",
+   "where": "main#main > div.ocean-life > div.sea-creature.shrimp-one",
+   "msg": "rotated -15.0° (and 1 more like it: div.ocean-wave.w1)",
+   "fix": "set it straight",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "tilt"
+   ],
+   "wheres": [
+    "main#main > div.ocean-life > div.sea-creature.shrimp-one"
+   ]
+  },
+  {
+   "check": "tilt",
+   "where": "main#main > div.ocean-wave.w2",
+   "msg": "rotated 3.0°",
+   "fix": "set it straight",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "tilt"
+   ],
+   "wheres": [
+    "main#main > div.ocean-wave.w2"
+   ]
+  },
+  {
+   "check": "empty-area",
+   "where": "main#main > div.ocean-life",
+   "msg": "93% of the section is empty: 32px above its first content, 544px of empty rows between its content, 34% beside content that covers under half the container, in its 971px of rows (WARN over 35%, FAIL over 50%)",
+   "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "empty-area"
+   ],
+   "wheres": [
+    "main#main > div.ocean-life"
+   ]
+  },
+  {
+   "check": "empty-area",
+   "where": "main#main > div.ocean-wash",
+   "msg": "the section shows no content at all: 699px of ground",
+   "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "empty-area"
+   ],
+   "wheres": [
+    "main#main > div.ocean-wash"
+   ]
+  },
+  {
+   "check": "empty-area",
+   "where": "main#main > div.ocean-wave.w1",
+   "msg": "the section shows no content at all: 430px of ground",
+   "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "empty-area"
+   ],
+   "wheres": [
+    "main#main > div.ocean-wave.w1"
+   ]
+  },
+  {
+   "check": "empty-area",
+   "where": "main#main > div.ocean-wave.w2",
+   "msg": "the section shows no content at all: 370px of ground",
+   "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "empty-area"
+   ],
+   "wheres": [
+    "main#main > div.ocean-wave.w2"
+   ]
+  },
+  {
+   "check": "empty-area",
+   "where": "main#main > div.ocean-wave.w3",
+   "msg": "the section shows no content at all: 340px of ground",
+   "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "empty-area"
+   ],
+   "wheres": [
+    "main#main > div.ocean-wave.w3"
+   ]
+  },
+  {
+   "check": "hero-screen",
+   "where": "main#main > div.ocean-wash",
+   "msg": "the hero ends at 583px on a 900px screen, 317px above the fold: it ends at the fold, 1px either way (SR-1)",
+   "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "hero-screen"
+   ],
+   "wheres": [
+    "main#main > div.ocean-wash"
+   ]
+  },
+  {
+   "check": "hero-screen",
+   "where": "div#react-bits-ocean \"Pause ocean motion\"",
+   "msg": "900px of the next section shows on the first screen (from 0px on a 900px screen): nothing below the hero shows at load (SR-1)",
+   "fix": "end the hero at the fold so nothing of the next section shows at load (hero height: 100svh)",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "hero-screen"
+   ],
+   "wheres": [
+    "div#react-bits-ocean \"Pause ocean motion\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "main#main > div.decor-item.decor-wave",
+   "msg": "the section is 40px tall (0 screens), 860px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
+   "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height"
+   ],
+   "wheres": [
+    "main#main > div.decor-item.decor-wave",
+    "main#main > div.topbar \"A Aditya Yanamala Software engineer · bu\"",
+    "main#main > div.ocean-wave.w3",
+    "main#main > div.ocean-wave.w1",
+    "main#main > div.ocean-wave.w2",
+    "main#main > section.hub.hero \"Software, with a human touch Software en\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "div#react-bits-ocean \"Pause ocean motion\"",
+   "msg": "the section's content does not fit it: its lowest content ends 963px below its top, past 899px (the section less 72px of bottom padding) (and 2 more like it: \"A Aditya Yanamala Softwa\", main#main > div.ocean-life) (SR-2)",
+   "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height"
+   ],
+   "wheres": [
+    "div#react-bits-ocean \"Pause ocean motion\""
+   ]
+  },
+  {
+   "check": "section-air",
+   "where": "main#main > div.ocean-life",
+   "msg": "the section shows no content: its content fills 0% of its 971px (55% or more) (SR-3)",
+   "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-air"
+   ],
+   "wheres": [
+    "main#main > div.ocean-life"
+   ]
+  },
+  {
+   "check": "section-air",
+   "where": "main#main > div.decor-item.decor-wave",
+   "msg": "the section shows no content: its content fills 0% of its 40px (55% or more) (SR-3)",
+   "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-air"
+   ],
+   "wheres": [
+    "main#main > div.decor-item.decor-wave"
+   ]
+  },
+  {
+   "check": "section-air",
+   "where": "main#main > div.ocean-wave.w1",
+   "msg": "the section shows no content: its content fills 0% of its 430px (55% or more) (and 4 more like it: main#main > div.ocean-wave.w2, main#main > div.ocean-wave.w3, \"Pause ocean motion\") (SR-3)",
+   "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-air"
+   ],
+   "wheres": [
+    "main#main > div.ocean-wave.w1"
+   ]
+  },
+  {
+   "check": "section-air",
+   "where": "main#main > section.hub.hero > div.bubble-field \"✦ About Me Who I am, what drives me, and\"",
+   "msg": "a top border across 97% of the container, between the section's content: sections and their parts are told apart by air and ground, not lines (SR-3)",
+   "fix": "take the rule out: sections and their parts are parted by their ground and the air between them",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-air"
+   ],
+   "wheres": [
+    "main#main > section.hub.hero > div.bubble-field \"✦ About Me Who I am, what drives me, and\""
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "div#react-bits-ocean \"Pause ocean motion\"",
+   "msg": "a <div> sits directly in <main>: every part of <main> is a <section> (SR-4)",
+   "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section"
+   ],
+   "wheres": [
+    "div#react-bits-ocean \"Pause ocean motion\""
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "main#main > div.ocean-life",
+   "msg": "a <div> sits directly in <main>: every part of <main> is a <section> (SR-4)",
+   "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section"
+   ],
+   "wheres": [
+    "main#main > div.ocean-life",
+    "main#main > div.ocean-wash"
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "main#main > div.topbar \"A Aditya Yanamala Software engineer · bu\"",
+   "msg": "the content of section 4 runs 72px from the left and 27px from the right (read from its outermost blocks: no .wrap): 72 and 27px are not one margin (one container, equal margins, 2px either way) (SR-6)",
+   "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "main#main > div.topbar \"A Aditya Yanamala Software engineer · bu\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "main#main > section.hub.hero \"Software, with a human touch Software en\"",
+   "msg": "the content of section 5 runs 72px from the left and 27px from the right (read from its outermost blocks: no .wrap): 72 and 27px are not one margin (one container, equal margins, 2px either way) (SR-6)",
+   "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "main#main > section.hub.hero \"Software, with a human touch Software en\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "a.skip-link \"Skip to content\"",
+   "msg": "a <a> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+   "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "a.skip-link \"Skip to content\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "main#main > div.ocean-wash",
+   "msg": "the section needs exactly one in-flow child .wrap (it has 0 in-flow children, 0 .wrap) (and 16 more like it: \"Pause ocean motion\", div#react-bits-ocean > div.portfolio-waves, \"Pause ocean motion\") (SR-6)",
+   "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "main#main > div.ocean-wash"
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "section.hub.hero > div.centerpiece > div.center-name > p.workplaces-label \"Where I’ve worked\"",
+   "msg": "1 text block starts on a left line at x 1072, 1000px from the container's left: text starts on the container's left, or on one split line (x 641, 755, 868) (SR-6)",
+   "fix": "start the text on the container's left, or on the one split line every split shares",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "section.hub.hero > div.centerpiece > div.center-name > p.workplaces-label \"Where I’ve worked\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "section.hub.hero > div.centerpiece > div.center-name > h2 \"Aditya ReddyYanamala\"",
+   "msg": "1 text block starts on a left line at x 871, 799px from the container's left: text starts on the container's left, or on one split line (x 641, 755, 868) (and 1 more like it: \"Aditya ReddyYanamala\") (SR-6)",
+   "fix": "start the text on the container's left, or on the one split line every split shares",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "section.hub.hero > div.centerpiece > div.center-name > h2 \"Aditya ReddyYanamala\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "div#react-bits-ocean > div.portfolio-waves > div.waves > canvas.waves__canvas",
+   "msg": "a <canvas> over half the container wide runs 0-1440px, not on the container's lines at 72-1413px (SR-6)",
+   "fix": "run the picture or box from the container's left line to its right line, or put it in a row or a split",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "div#react-bits-ocean > div.portfolio-waves > div.waves > canvas.waves__canvas"
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "main#main > section.hub.hero > div.bubble-field \"✦ About Me Who I am, what drives me, and\"",
+   "msg": "a box over half the container wide runs 72-1368px, not on the container's lines at 72-1413px (SR-6)",
+   "fix": "run the picture or box from the container's left line to its right line, or put it in a row or a split",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "main#main > section.hub.hero > div.bubble-field \"✦ About Me Who I am, what drives me, and\""
+   ]
+  },
+  {
+   "check": "collide",
+   "where": "div#react-bits-ocean > div.portfolio-waves > div.waves > canvas.waves__canvas",
+   "msg": "the words \"A\" and the picture div.waves > canvas.waves__canvas of another section lie in one place: the picture runs out of its section, which is shorter than what it holds",
+   "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+   "widths": [
+    390,
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "collide"
+   ],
+   "wheres": [
+    "div#react-bits-ocean > div.portfolio-waves > div.waves > canvas.waves__canvas"
+   ]
+  },
+  {
+   "check": "collide",
+   "where": "main#main > div.ocean-life > div.sea-creature.shrimp-two > svg",
+   "msg": "the words \"A LITTLE ABOUT ME\" and the picture div.sea-creature.shrimp-two > svg of another section lie in one place: the picture runs out of its section, which is shorter than what it holds",
+   "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "collide"
+   ],
+   "wheres": [
+    "main#main > div.ocean-life > div.sea-creature.shrimp-two > svg"
+   ]
+  },
+  {
+   "check": "top-stagger",
+   "where": "main#main > section.hub.hero > div.easter-scatter \"Click me Click me Click me Click me Clic\"",
+   "msg": "3 boxes side by side start at different heights (+0, +25, +3px)",
+   "fix": "align the tops of the boxes in the row (one floor, one ceiling)",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "top-stagger"
+   ],
+   "wheres": [
+    "main#main > section.hub.hero > div.easter-scatter \"Click me Click me Click me Click me Clic\""
+   ]
+  },
+  {
+   "check": "off-grid",
+   "where": "section.hub.hero > div.easter-scatter > button.decor-item.decor-ball > svg",
+   "msg": "left edge at 38.5px, 14.5px off the page margin at 24px (7 elements); 1 more in this section off the grid too (svg at 38.5px)",
+   "fix": "move it onto the page margin, or the column edge its section uses",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-grid"
+   ],
+   "wheres": [
+    "section.hub.hero > div.easter-scatter > button.decor-item.decor-ball > svg"
+   ]
+  },
+  {
+   "check": "hole",
+   "where": "main#main > div.ocean-life",
+   "msg": "an empty hole 288x1472px inside the section (174% of the screen's height), with content above and below it",
+   "fix": "close the empty space: move the content together, or give the space the visual it lacks",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "hole"
+   ],
+   "wheres": [
+    "main#main > div.ocean-life"
+   ]
+  },
+  {
+   "check": "collide",
+   "where": "main#main > div.ocean-life > div.sea-creature.shrimp-one > svg",
+   "msg": "the words \"Click me\" and the picture div.sea-creature.shrimp-one > svg of another section lie in one place: the picture runs out of its section, which is shorter than what it holds",
+   "fix": "on a phone nothing lies on anything else: let the section grow with its content (min-height for its screens, never a fixed height; --hm: 2 when it needs two) or cut what it holds; keep pictures and cards off the buttons; pad the page under a fixed bar by the bar's height (top: the first section; end: the footer)",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "collide"
+   ],
+   "wheres": [
+    "main#main > div.ocean-life > div.sea-creature.shrimp-one > svg"
+   ]
+  },
+  {
+   "check": "off-viewport",
+   "where": "a.skip-link \"Skip to content\"",
+   "msg": "at 320px wide it runs 999px past the screen's left edge (cut there: the page clips what runs past it)",
+   "fix": "keep it inside the screen at this width: let it shrink, wrap or stack",
+   "widths": [
+    320
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-viewport"
+   ],
+   "wheres": [
+    "a.skip-link \"Skip to content\""
+   ]
+  },
+  {
+   "check": "container",
+   "where": "page",
+   "msg": "no .wrap",
+   "fix": "put the content in one .wrap",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "container"
+   ],
+   "wheres": [
+    "page"
+   ]
+  }
+ ],
+ "waived": [],
+ "warnCount": 15,
+ "at": "2026-11-08T06:33:15.858Z"
+}

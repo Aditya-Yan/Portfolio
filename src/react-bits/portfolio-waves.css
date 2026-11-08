@@ -1,0 +1,7 @@
+#react-bits-ocean { position:absolute; inset:0; pointer-events:none; }
+.portfolio-waves { z-index:0; position:absolute; inset:0; overflow:hidden; pointer-events:none; mask-image:linear-gradient(90deg,#0002,#000 50%,#0006); }
+.ocean-motion-toggle { position:absolute; bottom:8px; right:clamp(24px,5vw,96px); pointer-events:auto; min-height:44px; padding:10px 0 10px 14px; border:0; background:none; color:#a5c6ca; font:10px Inter,sans-serif; cursor:pointer; text-decoration:underline; text-underline-offset:4px; z-index:7; }
+.ocean-motion-toggle:hover { color:#edf3ed; }
+.ocean-motion-toggle[hidden] { display:none; }
+.topbar,.hub { z-index:1; }
+@media(max-width:720px) { .portfolio-waves { mask-image:linear-gradient(#0008,#0004); } .scene { padding-bottom:50px; } .ocean-motion-toggle { bottom:4px; } }

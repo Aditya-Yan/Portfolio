@@ -1,0 +1,62 @@
+/* Make the actual skill categories the headings; supporting copy stays subordinate. */
+.skill-card { padding-left:0; }
+.skill-card:before { content:none; }
+.skill-card h3.skill-topic { font:500 clamp(24px,2.4vw,33px)/1.25 Inter,sans-serif; letter-spacing:-.045em; color:#e0eee5; margin:0 0 18px; }
+.skill-topic>span { display:block; font:500 13px/1.5 monospace; letter-spacing:.08em; color:#91bec1; margin-bottom:10px; }
+.skill-card .skill-description-title { grid-column:1; font:500 14px/1.6 Inter,sans-serif; letter-spacing:0; color:#b5d0d1; margin:0 0 10px; }
+.skill-card p { margin:0; }
+.skill-card ul { grid-row:1/4; }
+/* An invitation and a real email draft, with a brighter paper surface. */
+.contact-surface { display:grid; grid-template-columns:1.15fr 1fr; gap:70px; align-items:center; min-height:calc(100dvh - 270px); padding:20px 0 40px; }
+.contact-invitation>h3 { margin:24px 0; font:400 clamp(36px,4.3vw,61px)/1.15 'Libre Baskerville',serif; letter-spacing:-.055em; }
+.contact-invitation>h3 em { color:#9ec9c5; }
+.contact-invitation>p { color:#a6bdc1; font-size:15px; line-height:1.85; max-width:410px; }
+.contact-address { display:flex; align-items:center; justify-content:space-between; gap:15px; padding:20px 0; margin:18px 0 0; border-top:1px solid #b9dcd538; border-bottom:1px solid #b9dcd538; color:#d6e9e0; font-size:clamp(13px,1.45vw,18px); overflow-wrap:anywhere; min-height:60px; }
+.contact-address>span { color:#9ec9c5; font-size:24px; transition:translate .2s; }
+.contact-address:hover>span { translate:3px -3px; }
+.contact-socials { display:flex; gap:24px; flex-wrap:wrap; margin-top:12px; }
+.contact-socials>a,.contact-socials>button { display:flex; align-items:center; gap:12px; min-height:48px; font:400 12px Inter,sans-serif; background:none; border:0; padding:10px 0; color:#c6ded5; cursor:pointer; }
+.contact-socials>a:hover,.contact-socials>button:hover { text-decoration:underline; text-underline-offset:5px; color:#fff; }
+.contact-invitation .contact-copy-feedback { min-height:22px; margin:4px 0; color:#b9dcd5; font-size:11px; line-height:1.7; }
+.contact-location { margin-top:18px; color:#8eb6bc; font-size:10px; letter-spacing:.07em; }
+.contact-location>span { margin:0 12px; }
+.contact-letter { position:relative; isolation:isolate; border-radius:8px; padding:30px; background:#dbe8dc; color:#163641; border:1px solid #f0f6e5; box-shadow:12px 12px 0 #568f92,0 24px 70px #020f1838; transition:translate .2s,box-shadow .2s; }
+.contact-letter:hover,.contact-letter:focus-within { translate:0 -2px; box-shadow:12px 12px 0 #568f92,0 28px 70px #020f1855; }
+.letter-top { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.letter-top>span:first-child { font:500 9px/1.5 Inter,sans-serif; letter-spacing:.18em; color:#45646a; }
+.letter-stamp { display:grid; place-items:center; width:44px; height:52px; border:1px dashed #63878a; font:italic 16px/1.2 'Libre Baskerville',serif; color:#356c73; }
+.contact-letter>h3 { font:400 29px/1.25 'Libre Baskerville',serif; letter-spacing:-.045em; margin:20px 0 26px; }
+.contact-letter>label { display:block; font:500 11px/1.5 Inter,sans-serif; color:#34565c; margin-bottom:10px; }
+.contact-letter textarea { width:100%; min-height:155px; resize:vertical; padding:14px; border:1px solid #49717955; border-radius:4px; background:#ffffff40; color:#173944; font:400 14px/1.8 Inter,sans-serif; }
+.contact-letter textarea::placeholder { color:#5d7779; opacity:1; }
+.contact-letter textarea:focus-visible { outline:2px solid #246572; outline-offset:3px; }
+.contact-letter .letter-opener { display:flex; align-items:center; justify-content:space-between; gap:10px; width:100%; min-height:48px; padding:12px 0; background:none; border:0; color:#41686e; font:400 11px/1.5 Inter,sans-serif; cursor:pointer; text-align:left; }
+.letter-opener span { display:inline-block; font-size:19px; transition:rotate .3s; }
+.letter-opener:hover span { rotate:90deg; }
+.letter-opener:hover { color:#123e49; }
+.contact-letter .letter-send { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:17px 20px; min-height:54px; border-radius:4px; background:#153e49; color:#e6f0e4; font:500 12px Inter,sans-serif; transition:background .2s; }
+.contact-letter .letter-send:hover { background:#225c64; }
+.contact-letter .letter-send span { font-size:20px; }
+.contact-letter .letter-footnote { font:400 10px/1.7 Inter,sans-serif; text-align:center; color:#4a6c6c; margin:14px 0 0; }
+.contact-letter .letter-send:focus-visible,.contact-letter .letter-opener:focus-visible { outline-color:#246572; }
+@media(max-width:1100px) and (min-width:721px) {
+  .contact-surface { gap:36px; }
+  .contact-letter { padding:24px; }
+  .contact-invitation>h3 { font-size:40px; }
+}
+@media(max-width:720px) {
+  .skill-card { padding:28px 0; }
+  .skill-card h3.skill-topic { font-size:26px; margin-bottom:16px; }
+  .skill-topic>span { font-size:13px; margin-bottom:9px; }
+  .skill-card .skill-description-title { font-size:14px; }
+  .contact-surface { grid-template-columns:minmax(0,1fr); min-height:0; gap:36px; padding:4px 0 35px; }
+  .contact-invitation>h3 { font-size:40px; margin:22px 0; }
+  .contact-invitation>p { font-size:14px; }
+  .contact-socials { gap:22px; }
+  .contact-location { margin-top:14px; }
+  .contact-letter { padding:24px; margin-right:12px; }
+  .contact-letter>h3 { font-size:27px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .contact-letter,.letter-opener span,.contact-address>span { transition:none; }
+}

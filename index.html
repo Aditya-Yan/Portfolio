@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-type="software" data-motion="live">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -599,10 +599,9 @@
     .experience-detail { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:24px; margin:24px 0; }
     .experience-detail h4 { font-size:12px; text-transform:uppercase; letter-spacing:.1em; color:#A1CCDC; margin:0 0 10px; }
     .timeline-item { padding:30px; }
-    .timeline-item p,.project-scope { color:var(--muted); line-height:1.8; }
+    .timeline-item p { color:var(--muted); line-height:1.8; }
     .experience-detail p { font-size:14px; margin:0; }
     .experience-outcome { padding-top:16px; border-top:1px solid var(--line); font-size:13px; color:#A1CCDC!important; }
-    .project-scope { font-size:13px; padding-left:14px; border-left:2px solid #71B7D5; }
     .egg-hint { position:absolute; left:5vw; bottom:125px; font-size:10px; letter-spacing:.04em; color:#a1ccdc; }
     .easter-egg { pointer-events:auto; cursor:pointer; z-index:6; transition:opacity .2s; }
     .easter-egg:hover { opacity:1; }
@@ -738,6 +737,17 @@
     .tide-transition.playing[data-variant="down"] i { animation-name:tide-down; }
     @keyframes tide-down { 0% { top:-180%; rotate:8deg; } 42%,58% { top:-30%; rotate:-5deg; } 100% { top:110%; rotate:5deg; } }
   </style>
+  <meta name="page-type" content="software">
+  <meta name="site-kind" content="software">
+  <link rel="stylesheet" href="./assets/redesign.css">
+  <link rel="stylesheet" href="./assets/sections.css">
+  <link rel="stylesheet" href="./assets/scattered-eggs.css">
+  <link rel="stylesheet" href="./assets/portfolio-features.css">
+  <link rel="stylesheet" href="./assets/hub-desktop.css">
+  <link rel="stylesheet" href="./assets/contact-skills.css">
+  <link rel="stylesheet" href="./assets/react-bits.css">
+  <link rel="stylesheet" href="./assets/motion/motion.css">
+  <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -781,25 +791,25 @@
         </div>
       </div>
       <div class="top-actions">
-        <div class="chip">Click a bubble to explore</div>
+        <div class="chip">A portfolio beneath the surface</div>
         <a class="top-link" href="./Aditya_Yanamala_Resume.pdf" download>Download resume</a>
       </div>
     </div>
 
-    <section class="hub" aria-labelledby="hero-title">
+    <section data-enter class="hub hero" aria-labelledby="hero-title">
       <div class="intro-copy">
         <div class="eyebrow">Software, with a human touch</div>
-        <h1 id="hero-title">Software engineer.<br>Researcher.<br>Builder.</h1>
-        <p>I’m Aditya, a CS student at UT Dallas building AI applications and real-world software. Pick a bubble to explore.</p>
+        <h1 id="hero-title" data-moment="liquid-type" data-moment-opts='{"strength":0.3}'>Software engineer.<br>Researcher.<br><em>Builder.</em></h1>
+        <p>I’m Aditya, a CS student at UT Dallas building AI applications and real-world software. Take a look around.</p>
         <div class="cta-row">
-          <button class="cta-primary" data-open-panel="projects">Start with projects →</button>
+          <button class="cta-primary" data-open-panel="projects">See projects ↗</button>
           <a class="cta-secondary" href="https://github.com/Aditya-Yan" target="_blank" rel="noopener noreferrer">GitHub →</a>
           <a class="cta-secondary" href="https://www.linkedin.com/in/aditya-yanamala/" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
         </div>
       </div>
 
       <p class="egg-hint"></p>
-      <div class="centerpiece" aria-label="Aditya Yanamala profile">
+      <div class="centerpiece" data-enter-media aria-label="Aditya Yanamala profile">
         <div class="center-top">
           <div class="badge">A little about me</div>
           <div class="badge">01 / Introduction</div>
@@ -887,6 +897,7 @@
     </section>
 
     <template id="about-template">
+      <div class="about-opening"><div class="about-portrait"><img src="./assets/headshot.JPG" alt="Aditya Yanamala" width="600" height="600"></div><div class="about-opening-copy"><span class="section-index">01 / THE PERSON BEHIND THE WORK</span><p>Aditya Reddy<br><em>Yanamala.</em></p><div class="about-location">Computer Science · UT Dallas<br>Austin / Dallas</div></div></div>
       <div class="panel-hero">
         <div class="glass-card">
           <h3>A builder, researcher, and curious problem solver.</h3>
@@ -942,11 +953,11 @@
         </div>
       </div>
       <div class="experience-list">
-<article class="timeline-item"><small>IBM · Austin, TX</small><h3>Software Engineering Intern — watsonx Orchestrate</h3><span class="meta">Aug 2026 – Dec 2026</span><p>I work on bringing image inputs into watsonx Orchestrate, extending the information its agents can use beyond text. That also means handling how images fit into multimodal context windows and memory.</p><div class="experience-detail"><div><h4>Preinvoke image inputs</h4><p>Extended preinvoke plugins to accept image inputs, bringing image-based checks into the stage before an agent processes a request.</p></div><div><h4>Conversation-aware plugins</h4><p>Added conversation history across multiple chat-turn plugin calls. Preinvoke plugins can now use earlier messages as well as the current input, giving on-topic guardrails the context to assess whether a follow-up belongs in the conversation.</p></div><div><h4>Multimodal support</h4><p>Expanded support for image inputs while managing context-window and memory behavior. The work connects a new input type to the context an agent needs to respond.</p></div><div><h4>Security validation</h4><p>Built tools to detect prompt and code injection in image inputs. Image support introduces another place where instructions can enter a workflow, so validation is part of the feature itself.</p></div></div><p class="experience-outcome">Image inputs · Conversation-aware preinvoke plugins · Agent security</p><div class="tag-row"><span>Python</span><span>AI systems</span><span>Agent security</span><span>Multimodal</span></div></article>
-<article class="timeline-item"><small>Capital One · Dallas, TX</small><h3>Software Engineering Intern — Auto Loan Servicing Team</h3><span class="meta">Jun 2026 – Aug 2026</span><p>I worked on moving legacy EMR workloads to AWS Glue for the Auto Loan Servicing team. The migration focused on modernizing Spark data processing and reducing cloud infrastructure costs while preserving the data downstream teams depend on.</p><div class="experience-detail"><div><h4>Cloud migration</h4><p>Worked on replacing legacy EMR cluster workflows with AWS Glue pipelines, moving the processing into a serverless ETL environment.</p></div><div><h4>Data at scale</h4><p>Engineered Spark batch jobs to process 7M+ records per run and deliver structured data to more than 20 teams.</p></div><div><h4>Validation</h4><p>Worked on back-testing the pipeline against two years of historical data to check output integrity before production deployment.</p></div></div><p class="experience-outcome">7M+ records per run · 20+ downstream teams · Two years of historical validation</p><div class="tag-row"><span>AWS Glue</span><span>Apache Spark</span><span>AWS EMR</span><span>Data pipelines</span></div></article>
-<article class="timeline-item"><small>Alura · Frisco, TX</small><h3>ML / AI Engineering Intern</h3><span class="meta">May 2025 – Aug 2025</span><p>I built tools that connected content generation with day-to-day marketing work. The goal was to turn repeated manual steps into an autonomous agent workflow that could support multiple social accounts.</p><div class="experience-detail"><div><h4>Agent architecture</h4><p>Built and deployed an autonomous agent architecture integrated with ADK to automate marketing across 30+ accounts.</p></div><div><h4>Workflow automation</h4><p>Created content-generation and interaction tools and automated posting to social media platforms, saving more than six hours of manual work each week.</p></div></div><p class="experience-outcome">30+ accounts · 6+ hours saved per week</p><div class="tag-row"><span>Google ADK</span><span>Automation</span><span>AI agents</span><span>Python</span></div></article>
-<article class="timeline-item"><small>ACM Research · Richardson, TX</small><h3>Research Lead</h3><span class="meta">Aug 2025 – Nov 2025</span><p>I led a five-person team studying how recurrent models can decode attempted speech from neural activity. We worked with more than 10,500 neural trials and focused on learning structure across different time scales.</p><div class="experience-detail"><div><h4>Model design</h4><p>Designed a Hierarchical Multiscale RNN with dynamic boundary detection. A Straight-Through Estimator let the model learn discrete boundaries as part of training.</p></div><div><h4>Research focus</h4><p>The architecture learns when to update representations at different time scales, rather than treating every time step identically.</p></div><div><h4>Results</h4><p>Improved word accuracy from 81.2% to 85.2% over the prior state-of-the-art RNN baseline described in the research.</p></div></div><p class="experience-outcome">Five-person team · 10,500+ neural trials · 81.2% → 85.2% word accuracy</p><div class="tag-row"><span>PyTorch</span><span>HM-RNN</span><span>Speech decoding</span><span>Research leadership</span></div></article>
-<article class="timeline-item"><small>ACM Research · Richardson, TX</small><h3>Research Intern</h3><span class="meta">Sep 2024 – Nov 2024</span><p>I worked in a five-member team on a compact CNN–GNN hybrid model for EEG-based brain-computer interfaces. The project explored noninvasive neural signals and the potential for efficient models in neurological disorder management.</p><div class="experience-detail"><div><h4>Exploration</h4><p>Researched CNNs, LSTMs, GNNs, and t-SNE while testing on the PhysioNet EEG Dataset.</p></div><div><h4>Hybrid modeling</h4><p>Combined convolutional and graph-based modeling in a compact architecture, with edge-computing use in mind.</p></div><div><h4>Results and recognition</h4><p>Improved accuracy from 65.07% to 84.31%. The team received ACM Best Research in Fall 2024.</p></div></div><p class="experience-outcome">65.07% → 84.31% accuracy · ACM Best Research, Fall 2024</p><div class="tag-row"><span>EEG</span><span>CNN</span><span>GNN</span><span>Edge ML</span></div></article>
+<article class="timeline-item"><div class="experience-brand"><img src="./assets/ibm.svg" alt="IBM"><small>IBM · Austin, TX</small></div><h3>Software Engineering Intern — watsonx Orchestrate</h3><span class="meta">Aug 2026 – Dec 2026</span><p>I work on bringing image inputs into watsonx Orchestrate, extending the information its agents can use beyond text. That also means handling how images fit into multimodal context windows and memory.</p><div class="experience-detail"><div><h4>Preinvoke image inputs</h4><p>Extended preinvoke plugins to accept image inputs, bringing image-based checks into the stage before an agent processes a request.</p></div><div><h4>Conversation-aware plugins</h4><p>Added conversation history across multiple chat-turn plugin calls. Preinvoke plugins can now use earlier messages as well as the current input, giving on-topic guardrails the context to assess whether a follow-up belongs in the conversation.</p></div><div><h4>Multimodal support</h4><p>Expanded support for image inputs while managing context-window and memory behavior. The work connects a new input type to the context an agent needs to respond.</p></div><div><h4>Security validation</h4><p>Built tools to detect prompt and code injection in image inputs. Image support introduces another place where instructions can enter a workflow, so validation is part of the feature itself.</p></div></div><div class="experience-outcome"><span>Image inputs</span><span>Conversation-aware preinvoke plugins</span><span>Agent security</span></div><div class="tag-row"><span>Python</span><span>AI systems</span><span>Agent security</span><span>Multimodal</span></div></article>
+<article class="timeline-item"><div class="experience-brand"><img src="./assets/capital-one.png" alt="Capital One"><small>Capital One · Dallas, TX</small></div><h3>Software Engineering Intern — Auto Loan Servicing Team</h3><span class="meta">Jun 2026 – Aug 2026</span><p>I worked on moving legacy EMR workloads to AWS Glue for the Auto Loan Servicing team. The migration focused on modernizing Spark data processing and reducing cloud infrastructure costs while preserving the data downstream teams depend on.</p><div class="experience-detail"><div><h4>Cloud migration</h4><p>Worked on replacing legacy EMR cluster workflows with AWS Glue pipelines, moving the processing into a serverless ETL environment.</p></div><div><h4>Data at scale</h4><p>Engineered Spark batch jobs to process 7M+ records per run and deliver structured data to more than 20 teams.</p></div><div><h4>Validation</h4><p>Worked on back-testing the pipeline against two years of historical data to check output integrity before production deployment.</p></div></div><div class="experience-outcome"><span>7M+ records per run</span><span>20+ downstream teams</span><span>Two years of historical validation</span></div><div class="tag-row"><span>AWS Glue</span><span>Apache Spark</span><span>AWS EMR</span><span>Data pipelines</span></div></article>
+<article class="timeline-item"><div class="experience-brand"><span class="research-mark" aria-hidden="true">acm</span><small>ACM Research · Richardson, TX</small></div><h3>Research Lead</h3><span class="meta">Aug 2025 – Nov 2025</span><p>I led a five-person team studying how recurrent models can decode attempted speech from neural activity. We worked with more than 10,500 neural trials and focused on learning structure across different time scales.</p><div class="experience-detail"><div><h4>Model design</h4><p>Designed a Hierarchical Multiscale RNN with dynamic boundary detection. A Straight-Through Estimator let the model learn discrete boundaries as part of training.</p></div><div><h4>Research focus</h4><p>The architecture learns when to update representations at different time scales, rather than treating every time step identically.</p></div><div><h4>Results</h4><p>Improved word accuracy from 81.2% to 85.2% over the prior state-of-the-art RNN baseline described in the research.</p></div></div><div class="experience-outcome"><span>Five-person team</span><span>10,500+ neural trials</span><span>81.2% → 85.2% word accuracy</span></div><div class="tag-row"><span>PyTorch</span><span>HM-RNN</span><span>Speech decoding</span><span>Research leadership</span></div></article>
+<article class="timeline-item"><div class="experience-brand"><img src="./assets/alura.png" alt="Alura"><small>Alura · Frisco, TX</small></div><h3>ML / AI Engineering Intern</h3><span class="meta">May 2025 – Aug 2025</span><p>I built tools that connected content generation with day-to-day marketing work. The goal was to turn repeated manual steps into an autonomous agent workflow that could support multiple social accounts.</p><div class="experience-detail"><div><h4>Agent architecture</h4><p>Built and deployed an autonomous agent architecture integrated with ADK to automate marketing across 30+ accounts.</p></div><div><h4>Workflow automation</h4><p>Created content-generation and interaction tools and automated posting to social media platforms, saving more than six hours of manual work each week.</p></div></div><div class="experience-outcome"><span>30+ accounts</span><span>6+ hours saved per week</span></div><div class="tag-row"><span>Google ADK</span><span>Automation</span><span>AI agents</span><span>Python</span></div></article>
+<article class="timeline-item"><div class="experience-brand"><span class="research-mark" aria-hidden="true">acm</span><small>ACM Research · Richardson, TX</small></div><h3>Research Intern</h3><span class="meta">Sep 2024 – Nov 2024</span><p>I worked in a five-member team on a compact CNN–GNN hybrid model for EEG-based brain-computer interfaces. The project explored noninvasive neural signals and the potential for efficient models in neurological disorder management.</p><div class="experience-detail"><div><h4>Exploration</h4><p>Researched CNNs, LSTMs, GNNs, and t-SNE while testing on the PhysioNet EEG Dataset.</p></div><div><h4>Hybrid modeling</h4><p>Combined convolutional and graph-based modeling in a compact architecture, with edge-computing use in mind.</p></div><div><h4>Results and recognition</h4><p>Improved accuracy from 65.07% to 84.31%. The team received ACM Best Research in Fall 2024.</p></div></div><div class="experience-outcome"><span>65.07% → 84.31% accuracy</span><span>ACM Best Research, Fall 2024</span></div><div class="tag-row"><span>EEG</span><span>CNN</span><span>GNN</span><span>Edge ML</span></div></article>
 </div>
     </template>
 
@@ -960,7 +971,7 @@
             <button class="filter-btn" data-filter="ai">AI & Agents</button>
             <button class="filter-btn" data-filter="vision">Computer Vision</button>
             <button class="filter-btn" data-filter="mobile">Mobile</button>
-            <button class="filter-btn" data-filter="fullstack">Full Stack</button><button class="filter-btn" data-filter="research">Research</button>
+            <button class="filter-btn" data-filter="fullstack">Full Stack</button>
           </div>
         </div>
         <div class="glass-card">
@@ -973,20 +984,9 @@
         </div>
       </div>
       <div class="project-grid" id="project-grid">
-        <article class="project-card" data-tags="mobile ai fullstack">
-          <div class="project-art">
-            <svg viewBox="0 0 380 160" aria-hidden="true">
-              <rect x="18" y="18" width="92" height="124" rx="22" fill="rgba(10,9,34,.75)" stroke="rgba(255,255,255,.18)"/>
-              <circle cx="64" cy="58" r="18" fill="#71B7D5"/>
-              <rect x="40" y="86" width="48" height="9" rx="4.5" fill="#f4fbfe" opacity=".9"/>
-              <rect x="124" y="34" width="228" height="90" rx="22" fill="rgba(255,255,255,.14)"/>
-              <circle cx="162" cy="80" r="28" fill="#A1CCDC" opacity=".88"/>
-              <rect x="203" y="55" width="104" height="12" rx="6" fill="#ffffff" opacity=".78"/>
-              <rect x="203" y="78" width="130" height="10" rx="5" fill="#d0e4ec" opacity=".55"/>
-              <rect x="203" y="98" width="76" height="10" rx="5" fill="#71B7D5" opacity=".82"/>
-            </svg>
-          </div>
-          <small>Mobile · AI · Networking</small>
+        <article class="project-card" data-tags="mobile vision ai fullstack">
+          <div class="project-art" aria-hidden="true"><div class="preview-glance"><div class="preview-phone"><span class="preview-label">GlanceAR</span><div class="scan-face"><i></i></div><span class="preview-status">Opt-in recognition</span></div><div class="preview-flow"><span>Connect with a gesture</span><i>↗</i><span>Conversation recap</span><i>↗</i><span>Follow up</span></div></div></div>
+          <small>Mobile · Computer Vision · AI · Networking</small>
           <h3>GlanceAR</h3>
           <span class="meta">React Native, Convex, MediaPipe, Meta AI</span>
           <p>An AR networking app that supports opt-in facial recognition, gesture-based connections, and AI-generated conversation recaps so meeting people becomes easier to follow up on.</p>
@@ -998,37 +998,19 @@
         </article>
 
         <article class="project-card" data-tags="vision ai fullstack">
-          <div class="project-art">
-            <svg viewBox="0 0 380 160" aria-hidden="true">
-              <rect x="26" y="24" width="328" height="112" rx="24" fill="rgba(255,255,255,.12)"/>
-              <rect x="54" y="44" width="92" height="70" rx="16" fill="#71B7D5" opacity=".5" stroke="#71B7D5"/>
-              <rect x="204" y="40" width="82" height="64" rx="16" fill="#ff8f7b" opacity=".52" stroke="#ff8f7b"/>
-              <path d="M24 128h332" stroke="rgba(255,255,255,.3)" stroke-width="5" stroke-linecap="round"/>
-              <text x="64" y="64" fill="#fff" font-size="12" font-family="Inter">PERSON</text>
-              <text x="214" y="58" fill="#fff" font-size="12" font-family="Inter">CAR</text>
-            </svg>
-          </div>
+          <div class="project-art" aria-hidden="true"><div class="preview-vision"><span class="preview-label">SignVision / visual context</span><div class="vision-scene"><div class="vision-person">PERSON</div><div class="vision-object">OBJECT</div><div class="vision-line"></div></div><div class="preview-status">◉ Detect → Understand → Announce</div></div></div>
           <small>Computer vision · Accessibility</small>
           <h3>SignVision</h3>
           <span class="meta">Python, Flask, JavaScript, YOLO, Gemini API, Google Cloud TTS</span>
           <p>A real-time computer vision app for visually impaired users that detects objects, uses Gemini for context, overlays helpful cues, and announces alerts with audio.</p>
-          <div class="tag-row"><span>2nd place at CalHacks</span><span>&lt;1s latency</span><span>Accessibility</span></div>
+          <div class="tag-row"><span>2nd place at CalHacks</span><span>&lt;1s latency</span><span>Computer Vision</span><span>Accessibility</span></div>
           <div class="project-links">
             <a href="https://github.com/Aditya-Yan/SignVision" target="_blank" rel="noopener noreferrer">GitHub →</a>
           </div>
         </article>
 
         <article class="project-card" data-tags="ai fullstack">
-          <div class="project-art">
-            <svg viewBox="0 0 380 160" aria-hidden="true">
-              <rect x="36" y="28" width="308" height="104" rx="26" fill="rgba(255,255,255,.12)"/>
-              <circle cx="90" cy="80" r="24" fill="#A1CCDC" opacity=".92"/>
-              <circle cx="163" cy="58" r="14" fill="#71B7D5" opacity=".95"/>
-              <circle cx="226" cy="92" r="16" fill="#A1CCDC" opacity=".92"/>
-              <circle cx="292" cy="62" r="12" fill="#71B7D5" opacity=".95"/>
-              <path d="M112 75 150 62M176 63 212 84M242 89 280 69" stroke="rgba(255,255,255,.75)" stroke-width="4" stroke-linecap="round"/>
-            </svg>
-          </div>
+          <div class="project-art" aria-hidden="true"><div class="preview-research"><span class="preview-label">Researchly / discovery pipeline</span><div class="research-query">Student interests <b>↗</b></div><div class="research-nodes"><span>RAG<br><small>Retrieve</small></span><i>→</i><span>Labs<br><small>Match</small></span><i>→</i><span>Agents<br><small>Draft</small></span></div></div></div>
           <small>AI agents · Research tooling</small>
           <h3>Researchly</h3>
           <span class="meta">Python, Flask, JavaScript, HTML/CSS, ADK</span>
@@ -1040,15 +1022,7 @@
         </article>
 
         <article class="project-card" data-tags="fullstack ai">
-          <div class="project-art">
-            <svg viewBox="0 0 380 160" aria-hidden="true">
-              <rect x="44" y="32" width="292" height="94" rx="24" fill="rgba(255,255,255,.12)"/>
-              <rect x="68" y="52" width="110" height="54" rx="14" fill="#71B7D5" opacity=".76"/>
-              <rect x="194" y="52" width="118" height="14" rx="7" fill="#ffffff" opacity=".82"/>
-              <rect x="194" y="78" width="92" height="12" rx="6" fill="#A1CCDC" opacity=".76"/>
-              <rect x="194" y="98" width="64" height="10" rx="5" fill="#A1CCDC" opacity=".7"/>
-            </svg>
-          </div>
+          <div class="project-art" aria-hidden="true"><div class="preview-chat"><span class="preview-label">AKPsi GPT / chapter knowledge</span><div class="chat-bubble">Chapter information</div><div class="chat-bubble answer"><i>✦</i> Knowledge, connected.<div class="chat-lines"><b></b><b></b></div></div><div class="chat-input">Ask your chapter <span>↑</span></div></div></div>
           <small>Full stack · Community tool</small>
           <h3>AKPsi GPT</h3>
           <span class="meta">Flask, React, Heroku, Google Sheets API</span>
@@ -1056,9 +1030,9 @@
           <div class="tag-row"><span>+15% reach-outs</span><span>300+ members</span><span>Chat history</span></div>
         </article>
       
-<article class="project-card" data-tags="ai fullstack"><div class="project-art"><svg viewBox="0 0 380 160" aria-hidden="true" fill="none" stroke="#A1CCDC" stroke-width="2"><rect x="58" y="50" width="70" height="60" rx="12"/><rect x="154" y="25" width="70" height="60" rx="12"/><rect x="250" y="50" width="70" height="60" rx="12"/><path d="m128 80 26-25m70 0 26 25M128 100h122"/></svg></div><small>In progress · Recruiting intelligence</small><h3>Vantage</h3><span class="meta">Next.js, TypeScript, Python, Supabase PostgreSQL</span><p>A platform in development for finding relevant contacts connected to a job posting, helping applicants make connections around roles they’re interested in. The planned workflow brings job discovery and contact research together so each opportunity has a clear next step for outreach.</p><p class="project-scope">The full-stack skeleton and database foundation are implemented, including 16 tables, a metrics substrate, and a research queue. Ingestion, automated research, and outreach-draft workflows remain planned.</p><div class="tag-row"><span>In progress</span><span>Data modeling</span><span>Queue architecture</span></div><div class="project-links"><a href="https://github.com/Aditya-Yan/Vantage" target="_blank" rel="noopener noreferrer">GitHub →</a></div></article>
-<article class="project-card" data-tags="ai fullstack"><div class="project-art"><svg viewBox="0 0 380 160" aria-hidden="true" fill="none" stroke="#A1CCDC" stroke-width="2"><circle cx="190" cy="80" r="58"/><circle cx="190" cy="80" r="35"/><path d="M190 22v116M132 80h116M190 80l40-40"/><circle cx="215" cy="61" r="5" fill="#a1ccdc"/></svg></div><small>Product prototype · Customer insights</small><h3>Sentiment Radar</h3><span class="meta">Next.js, TypeScript, Supabase, Leaflet</span><p>A regional customer-sentiment dashboard that connects a map of happiness scores with a multi-step diagnosis workflow. It retrieves recent snapshots, compares trends, identifies likely causes, and drafts internal and customer-facing messages.</p><p class="project-scope">The repository includes sentiment analysis with fallback behavior and a rule-based diagnosis workflow. It is a prototype, with simulated Slack publishing.</p><div class="tag-row"><span>Interactive maps</span><span>Sentiment analysis</span><span>Diagnosis workflow</span></div><div class="project-links"><a href="https://github.com/Aditya-Yan/SentimentRadar" target="_blank" rel="noopener noreferrer">GitHub →</a></div></article>
-<article class="project-card" data-tags="ai research"><div class="project-art"><svg viewBox="0 0 380 160" aria-hidden="true" fill="none" stroke="#A1CCDC" stroke-width="2"><rect x="74" y="30" width="110" height="100" rx="12"/><path d="M94 54h70M94 72h50M94 90h60M224 45v70m0-70 35 35-35 35M259 80h45"/></svg></div><small>Team project · NLP research</small><h3>Fake News Classification</h3><span class="meta">Python, BERT, LIAR dataset</span><p>A team machine-learning project exploring binary classification of political statements from the LIAR dataset. The repository compares classical text-classification approaches with transformer-based models.</p><p class="project-scope">My public contribution added the BERT model. The project frames the dataset’s six veracity labels as a binary task; evaluation results are still in progress.</p><div class="tag-row"><span>Team contributor</span><span>BERT</span><span>Model comparison</span></div><div class="project-links"><a href="https://github.com/RohitPenna/ML_Final_Project" target="_blank" rel="noopener noreferrer">GitHub →</a></div></article>
+<article class="project-card" data-tags="ai fullstack"><div class="project-art" aria-hidden="true"><div class="preview-vantage"><span class="preview-label">Vantage / in development</span><div class="vantage-columns"><div><small>01</small>Job discovery<div class="mini-line"></div></div><i>→</i><div><small>02</small>Contact research<div class="mini-line"></div></div><i>→</i><div><small>03</small>Outreach drafts<div class="mini-line"></div></div></div><span class="preview-status">Database foundation → Planned workflows</span></div></div><small>In progress · Recruiting intelligence</small><h3>Vantage</h3><span class="meta">Next.js, TypeScript, Python, Supabase PostgreSQL</span><p>A platform in development for finding relevant contacts connected to a job posting, helping applicants make connections around roles they’re interested in. The planned workflow brings job discovery and contact research together so each opportunity has a clear next step for outreach.</p><div class="tag-row"><span>In progress</span><span>Data modeling</span><span>Queue architecture</span></div><div class="project-links"><a href="https://github.com/Aditya-Yan/Vantage" target="_blank" rel="noopener noreferrer">GitHub →</a></div></article>
+<article class="project-card" data-tags="ai fullstack"><div class="project-art" aria-hidden="true"><div class="preview-radar"><span class="preview-label">Sentiment Radar / prototype</span><div class="radar-disc"><i></i><i></i><b></b><b></b><b></b></div><div class="radar-steps"><span>Regional snapshots</span><span>Trend diagnosis</span><span>Message drafts</span></div></div></div><small>Product prototype · Customer insights</small><h3>Sentiment Radar</h3><span class="meta">Next.js, TypeScript, Supabase, Leaflet</span><p>A regional customer-sentiment dashboard that connects a map of happiness scores with a multi-step diagnosis workflow. It retrieves recent snapshots, compares trends, identifies likely causes, and drafts internal and customer-facing messages.</p><div class="tag-row"><span>Interactive maps</span><span>Sentiment analysis</span><span>Diagnosis workflow</span></div><div class="project-links"><a href="https://github.com/Aditya-Yan/SentimentRadar" target="_blank" rel="noopener noreferrer">GitHub →</a></div></article>
+
 
 </div>
     </template>
@@ -1078,34 +1052,31 @@
       </div>
       <div class="skill-columns">
         <article class="skill-card">
-          <small>01 / AI &amp; machine learning</small><h3>Models, learning, and perception</h3>
+          <h3 class="skill-topic"><span>01 /</span>AI &amp; machine learning</h3><h4 class="skill-description-title">Models, learning, and perception</h4>
           <p>Building and evaluating models for neural signals, language, and visual inputs.</p>
           <ul><li>PyTorch</li><li>TensorFlow</li><li>Keras</li><li>Scikit-learn</li><li>Computer Vision</li><li>CNNs</li><li>GNNs</li><li>RNNs / LSTMs</li><li>BERT</li><li>Model evaluation</li><li>Matplotlib</li></ul>
         </article>
         <article class="skill-card">
-          <small>02 / Agents &amp; LLM systems</small><h3>Tools, context, and orchestration</h3>
+          <h3 class="skill-topic"><span>02 /</span>Agents &amp; LLM systems</h3><h4 class="skill-description-title">Tools, context, and orchestration</h4>
           <p>Connecting models to useful workflows, with the tools, memory, and guardrails they need.</p>
           <ul><li>Google ADK</li><li>MCP</li><li>RAG</li><li>Multi-agent workflows</li><li>Tool integration</li><li>Preinvoke plugins</li><li>Conversation history</li><li>Multimodal inputs</li><li>Prompt-injection checks</li><li>n8n</li></ul>
         </article>
         <article class="skill-card">
-          <small>03 / Software engineering</small>
-          <h3>Backend and product development</h3>
+          <h3 class="skill-topic"><span>03 /</span>Software engineering</h3><h4 class="skill-description-title">Backend and product development</h4>
           <p>Reliable engineering foundations for useful software.</p>
           <ul>
             <li>Python</li><li>Java</li><li>C++</li><li>JavaScript</li><li>TypeScript</li><li>Flask</li><li>Spring Boot</li><li>Node.js</li><li>React</li>
           </ul>
         </article>
         <article class="skill-card">
-          <small>04 / Infrastructure</small>
-          <h3>Cloud, data, and deployment</h3>
+          <h3 class="skill-topic"><span>04 /</span>Infrastructure</h3><h4 class="skill-description-title">Cloud, data, and deployment</h4>
           <p>Infrastructure and pipelines that support production-ready systems.</p>
           <ul>
             <li>AWS Glue</li><li>AWS EMR</li><li>Apache Spark</li><li>Google Cloud Platform</li><li>Snowflake</li><li>SQL</li><li>MongoDB</li><li>Supabase</li><li>Firebase</li>
           </ul>
         </article>
         <article class="skill-card">
-          <small>05 / Shipping</small>
-          <h3>Tools for building and iterating</h3>
+          <h3 class="skill-topic"><span>05 /</span>Shipping</h3><h4 class="skill-description-title">Tools for building and iterating</h4>
           <p>The pieces that help me turn ideas into polished work.</p>
           <ul>
             <li>Git</li><li>Docker</li><li>CI/CD</li><li>Vercel</li><li>Maven</li><li>Selenium</li>
@@ -1115,34 +1086,30 @@
     </template>
 
     <template id="contact-template">
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Let’s connect.</h3>
-          <p>If you’re reaching out about software engineering opportunities, hackathons, research, or collaboration ideas, I’d be glad to hear from you.</p>
-          <div class="contact-actions">
-            <a href="mailto:AXY230026@utdallas.edu">Email me →</a>
-            <a href="https://www.linkedin.com/in/aditya-yanamala/" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
-            <a href="https://github.com/Aditya-Yan" target="_blank" rel="noopener noreferrer">GitHub →</a>
-            <button id="copy-email-btn">Copy email</button>
+      <div class="contact-surface">
+        <div class="contact-invitation">
+          <span class="section-index">05 / SAY HELLO</span>
+          <h3>Always up for<br><em>a conversation.</em></h3>
+          <p>Message me about anything. A question, a half-formed idea, or just a hello—I'm happy to talk.</p>
+          <a class="contact-address" href="mailto:AXY230026@utdallas.edu">AXY230026@utdallas.edu <span aria-hidden="true">↗</span></a>
+          <div class="contact-socials">
+            <a href="https://www.linkedin.com/in/aditya-yanamala/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/Aditya-Yan" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <button id="copy-email-btn" type="button">Copy email <span aria-hidden="true">⧉</span></button>
           </div>
-          <div class="note-box" id="copy-feedback" role="status">Want a faster route? Use the copy button, then paste my email wherever you need it.</div>
+          <p class="contact-copy-feedback" id="copy-feedback" role="status" aria-live="polite"></p>
+          <div class="contact-location">UT Dallas <span>·</span> Austin / Dallas</div>
         </div>
-        <div class="contact-card">
-          <h3>Good fits for a message</h3>
-          <ul>
-            <li>Software engineering internships and new grad roles</li>
-            <li>AI product work and agentic systems</li>
-            <li>Hackathon teams and side projects</li>
-            <li>Research collaborations or technical conversations</li>
-          </ul>
-          <div class="tag-row">
-            <span>AXY230026@utdallas.edu</span>
-            <span>UT Dallas</span>
-            <span>Austin / Dallas</span>
-          </div>
+        <div class="contact-letter">
+          <div class="letter-top"><span>A LITTLE NOTE</span><span class="letter-stamp" aria-hidden="true">AY<br>↗</span></div>
+          <h3>No perfect opening<br>line needed.</h3>
+          <label for="contact-message">Your message</label>
+          <textarea id="contact-message" rows="5" placeholder="Hey Aditya, …"></textarea>
+          <button class="letter-opener" id="suggest-opener" type="button">Give me an opening line <span aria-hidden="true">↻</span></button>
+          <a class="letter-send" id="open-email-draft" href="mailto:AXY230026@utdallas.edu?subject=Hello%20Aditya">Open email draft <span aria-hidden="true">↗</span></a>
+          <p class="letter-footnote">Opens in your email app. Send when you're ready.</p>
         </div>
       </div>
-      <p class="footer-note">Thanks for exploring the portfolio.</p>
     </template>
   </main>
 
@@ -1206,67 +1173,6 @@
       contact: { title: 'Contact', kicker: 'Let’s connect' }
     };
 
-    let tideBusy = false;
-    const sectionTides = { about: "right", experience: "left", projects: "ripple", skills: "down", contact: "up" };
-    function openPanel(name, trigger) {
-      if (tideBusy) return;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { showPanel(name, trigger); return; }
-      tideBusy = true;
-      const tide = document.getElementById('tide-transition');
-      tide.dataset.variant = sectionTides[name] || "up";
-      tide.classList.add('playing');
-      setTimeout(() => showPanel(name, trigger), 270);
-      setTimeout(() => { tide.classList.remove('playing'); tideBusy = false; }, 640);
-    }
-    function showPanel(name, trigger) {
-      const template = document.getElementById(`${name}-template`);
-      if (!template) return;
-      lastTrigger = trigger || document.activeElement;
-      eggToast.hidden = true;
-      document.querySelectorAll('.easter-egg').forEach(el => { el.inert = true; });
-      panelTitle.textContent = panelMeta[name].title;
-      panelKicker.textContent = panelMeta[name].kicker;
-      panelBody.innerHTML = '';
-      panelBody.appendChild(template.content.cloneNode(true));
-      panelOverlay.classList.add('active');
-      panelOverlay.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-      panelShell.scrollTop = 0;
-      document.querySelector('.hub').inert = true;
-      document.querySelector('.topbar').inert = true;
-      panelShell.focus();
-      bindDynamicUI(name);
-    }
-
-    function closePanel() {
-      panelOverlay.classList.remove('active');
-      panelOverlay.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      panelBody.innerHTML = '';
-      document.querySelectorAll('.easter-egg').forEach(el => { el.inert = false; });
-      document.querySelector('.hub').inert = false;
-      document.querySelector('.topbar').inert = false;
-      if (lastTrigger && typeof lastTrigger.focus === 'function') lastTrigger.focus();
-    }
-
-    openButtons.forEach(button => {
-      button.addEventListener('click', () => openPanel(button.dataset.openPanel, button));
-    });
-
-    backBtn.addEventListener('click', closePanel);
-    panelOverlay.addEventListener('click', (event) => {
-      if (event.target === panelOverlay) closePanel();
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Tab' && panelOverlay.classList.contains('active')) {
-        const focusable = [...panelShell.querySelectorAll('a[href],button')].filter(el => !el.closest('[hidden]'));
-        const first = focusable[0], last = focusable[focusable.length-1];
-        if (event.shiftKey && (document.activeElement === first || document.activeElement === panelShell)) { event.preventDefault(); last?.focus(); }
-        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
-      }
-      if (event.key === 'Escape' && panelOverlay.classList.contains('active')) closePanel();
-    });
-
     function bindDynamicUI(panelName) {
       if (panelName === 'projects') {
         const filters = panelBody.querySelectorAll('.filter-btn');
@@ -1302,6 +1208,31 @@
         });
       }
       if (panelName === 'contact') {
+        const message = panelBody.querySelector('#contact-message');
+        const draft = panelBody.querySelector('#open-email-draft');
+        const opener = panelBody.querySelector('#suggest-opener');
+        const openings = [
+          'Hey Aditya, I came across your portfolio and wanted to say hello.',
+          'Hey Aditya, I have an idea I would love to get your take on.',
+          'Hey Aditya, what is something you have enjoyed learning lately?'
+        ];
+        let openerIndex = 0;
+        let lastOpening = '';
+        function updateDraft() {
+          draft.href = 'mailto:AXY230026@utdallas.edu?subject=Hello%20Aditya&body=' + encodeURIComponent(message.value);
+          message.closest('.contact-letter').classList.toggle('has-message', !!message.value.trim());
+        }
+        message.addEventListener('input', updateDraft);
+        opener.addEventListener('click', () => {
+          const opening = openings[openerIndex++ % openings.length];
+          if (!message.value.trim() || message.value === lastOpening) message.value = opening;
+          else if (lastOpening && message.value.startsWith(lastOpening)) message.value = opening + message.value.slice(lastOpening.length);
+          else message.value = opening + '\n\n' + message.value;
+          lastOpening = opening;
+          updateDraft();
+          message.focus();
+        });
+        updateDraft();
         const copyBtn = panelBody.querySelector('#copy-email-btn');
         const copyFeedback = panelBody.querySelector('#copy-feedback');
         copyBtn?.addEventListener('click', async () => {
@@ -1317,21 +1248,16 @@
 
     const eggToast = document.getElementById('egg-toast');
     let eggTimer;
-    function revealEgg(message) {
+    function revealEgg(message, duration = 6500) {
       clearTimeout(eggTimer);
       eggToast.textContent = message;
       eggToast.hidden = false;
-      eggTimer = setTimeout(() => { eggToast.hidden = true; }, 6500);
+      eggTimer = setTimeout(() => { eggToast.hidden = true; }, duration);
     }
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     document.querySelector('.decor-valorant').addEventListener('click', () => { eggToast.hidden = true; document.getElementById('rank-dialog').showModal(); });
-    document.querySelector('.decor-ball').addEventListener('click', (event) => {
-      if (!reduceMotion.matches) event.currentTarget.querySelector('svg').animate([
-        {transform:'translateY(0) rotate(0deg)'}, {transform:'translateY(-65px) rotate(160deg)'}, {transform:'translateY(0) rotate(360deg)'}
-      ],{duration:850,easing:'ease-in-out'});
-      revealEgg('Nothing but net. Back to building.');
-    });
-    document.querySelector('.decor-book').addEventListener('click', () => revealEgg('One more chapter. Then I’ll close the laptop. Probably.'));
+    document.querySelector('.decor-ball').addEventListener('click', event => shootBasketball(event.currentTarget));
+    document.querySelector('.decor-book').addEventListener('click', () => revealEgg('One more chapter. Then I’ll close the laptop. Probably.', 2000));
     document.querySelector('.decor-food').addEventListener('click', () => { eggToast.hidden = true; document.getElementById('food-dialog').showModal(); });
 
     const aimDialog = document.getElementById('aim-dialog');
@@ -1420,5 +1346,12 @@
       }
     });
   </script>
+  <script src="./assets/data/case-studies.js"></script>
+  <script src="./assets/navigation.js"></script>
+  <script src="./assets/basketball.js"></script>
+  <script src="./assets/ocean.js"></script>
+  <script type="module" src="./assets/react-bits.js"></script>
+  <script type="module" src="./assets/motion/motion.js"></script>
+  <script type="module" src="./assets/moments/moments.js"></script>
 </body>
 </html>
