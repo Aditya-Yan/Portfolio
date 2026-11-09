@@ -5,6 +5,7 @@
     "build:effects": "esbuild src/react-bits/main.jsx --bundle --minify --format=esm --jsx=automatic --outfile=assets/react-bits.js"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
