@@ -1,0 +1,5 @@
+software — personal software engineering portfolio
+User requests additional streaking stars orbiting the black hole, random-looking nonclickable planets and space objects, specifically an ice asteroid belt. Preserve all existing information, routes, easter eggs, initial pointer visibility, and smooth direct 3D projection.
+Add an isolated Canvas decoration renderer: eight real orbital comet trails, nine shaded ice/rock/gas/ringed planets, and a tilted 3D belt of faceted icy debris. The two existing pointer-transparent canvas layers supply natural near/far occlusion. No new clickable objects or text.
+Share the existing world clock, camera orientation, pause, reduced-motion rest, and hidden-tab behavior. Reduce shard count and trail samples on mobile. Keep code native and dependency free.
+Check desktop/mobile rendering, initial destinations, Canvas pointer transparency, both layers frozen on pause, genuine orbit/camera motion, touch and reduced motion, unchanged page markup, and performance. The user's custom space scene takes precedence over marketing-template layout/copy rules. Local repository update only.

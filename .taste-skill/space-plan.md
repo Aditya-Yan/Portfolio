@@ -1,0 +1,7 @@
+software — personal software engineering portfolio
+User-supplied black-hole star-map reference takes precedence over random palette, scene, and layout deals. Retain Inter / Libre Baskerville and every existing word, link, photograph, case study, and easter egg.
+Home: one desktop viewport with compact original intro and profile, central black hole, and five native navigation buttons arranged as celestial destinations. Native vertical flow on touch viewports.
+About: moon, circular portrait, silver accents. Experience: ringed planet, orbital timeline, sand-gold accents. Projects and case studies: terrestrial planet, warm copper accents. Skills: constellation, icy-blue accents. Contact: signal star and orbital rings, warm ivory accents.
+Motion: existing hero entrance and liquid-type moment; decorative Canvas 2D constellation field and comet orbits; a covering lens transition. Pause freezes the canvas, reduced motion renders a still, hidden tabs and open sections stop frames.
+Facts and voice: unchanged. No invented facts, new external assets, or dependencies. Original thematic wording such as the aim-game title and Konami-code messages is intentionally preserved to satisfy the exact-copy requirement.
+Verification: original HTML text and link/media inventory compared directly; browser geometry, history, filters, case studies, composer, all easter eggs, pause/play, and reduced motion; desktop and mobile screenshots.

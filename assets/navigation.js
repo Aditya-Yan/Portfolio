@@ -48,6 +48,32 @@
   sectionNav.innerHTML = Object.entries(panelMeta).map(([key, value]) => `<a href="#${key}">${escape(key === 'about' ? 'About' : key === 'skills' ? 'Skills' : value.title)}</a>`).join('');
   document.querySelector('.panel-topbar').append(sectionNav);
 
+  const jump = document.getElementById('tide-transition');
+  const streaks = document.createElement('div');
+  streaks.className = 'jump-streaks';
+  for (let i = 0; i < 64; i++) {
+    const streak = document.createElement('span');
+    streak.style.setProperty('--angle', `${i * 137.508}deg`);
+    streak.style.setProperty('--distance', `${4 + (i * 17 % 30)}vmin`);
+    streak.style.setProperty('--delay', `${i % 8 * 7}ms`);
+    streaks.append(streak);
+  }
+  const gate = document.createElement('div'); gate.className = 'jump-gate';
+  const network = document.createElement('div'); network.className = 'jump-network';
+  network.innerHTML = '<svg viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid slice"><path d="M0 160 180 80 320 270 460 120 630 240 800 70 1000 160M0 540 180 380 320 530 460 360 630 490 800 390 1000 560M180 80v300l140-110v260l140-410v240l170-120v250L800 70v320"/><g><circle cx="180" cy="80" r="3"/><circle cx="320" cy="270" r="3"/><circle cx="460" cy="120" r="3"/><circle cx="630" cy="240" r="3"/><circle cx="800" cy="390" r="3"/></g></svg>';
+  jump.append(streaks, gate, network);
+
+  function addArrival(section) {
+    if (panelBody.querySelector(':scope > .arrival-scene')) return;
+    const scene = document.createElement('div');
+    scene.className = 'arrival-scene';
+    scene.dataset.world = section;
+    scene.setAttribute('aria-hidden', 'true');
+    scene.innerHTML = '<div class="arrival-stars"></div><div class="arrival-grid"></div><div class="arrival-orbit orbit-a"></div><div class="arrival-orbit orbit-b"></div><div class="arrival-world"><i></i><b></b></div><div class="arrival-satellite"></div><svg class="arrival-constellation" viewBox="0 0 700 200"><path d="m40 130 90-85 120 95 100-100 120 110L600 55l65 75M130 45l220-5 250 15M250 140l220 10"/><g><circle cx="40" cy="130" r="3"/><circle cx="130" cy="45" r="4"/><circle cx="250" cy="140" r="4"/><circle cx="350" cy="40" r="5"/><circle cx="470" cy="150" r="4"/><circle cx="600" cy="55" r="4"/><circle cx="665" cy="130" r="3"/></g></svg>';
+    panelBody.prepend(scene);
+  }
+
+
   const evidence = [
     { links: [['ACM neural research', 'experience/acm-research-lead'], ['Computer vision · SignVision', 'projects/signvision']], tools: { 'PyTorch':'experience/acm-research-lead', 'CNNs':'experience/acm-research-intern', 'GNNs':'experience/acm-research-intern', 'RNNs / LSTMs':'experience/acm-research-lead', 'Computer Vision':'projects/signvision', 'Model evaluation':'experience/acm-research-lead' } },
     { links: [['IBM · context & guardrails', 'experience/ibm'], ['Researchly · agent loop', 'projects/researchly']], tools: { 'Google ADK':'projects/researchly', 'MCP':'projects/researchly', 'RAG':'projects/researchly', 'Multi-agent workflows':'projects/researchly', 'Preinvoke plugins':'experience/ibm', 'Conversation history':'experience/ibm', 'Multimodal inputs':'experience/ibm', 'Prompt-injection checks':'experience/ibm', 'Tool integration':'experience/alura' } },
@@ -74,6 +100,15 @@
       panelBody.querySelectorAll('.timeline-item').forEach((role, index) => {
         role.id = roleIds[index]; role.tabIndex = -1;
       });
+      const index = document.createElement('nav');
+      index.className = 'role-index'; index.setAttribute('aria-label', 'Jump to an experience');
+      const labels = ['IBM', 'Capital One', 'ACM · Research Lead', 'Alura', 'ACM · Research Intern'];
+      labels.forEach((label, i) => {
+        const link = document.createElement('a'); link.href = `#experience/${roleIds[i]}`;
+        link.textContent = label; index.append(link);
+      });
+      panelBody.prepend(index);
+
     }
     if (section === 'skills') {
       panelBody.querySelectorAll('.skill-card').forEach((card, index) => {
@@ -126,9 +161,11 @@
       document.body.style.overflow = '';
       document.querySelectorAll('.easter-egg').forEach(el => { el.inert = false; });
       document.querySelector('.hub').inert = false;
-      document.querySelector('.topbar').inert = false;
       document.title = 'Aditya Yanamala — Portfolio';
-      if (wasOpen) (lastTrigger?.isConnected ? lastTrigger : document.querySelector('.cta-primary')).focus({ preventScroll: true });
+      if (wasOpen) {
+        const target = lastTrigger?.closest('.destination-menu')?.querySelector('summary') || (lastTrigger?.isConnected && lastTrigger.getClientRects().length ? lastTrigger : document.querySelector('.bubble-projects'));
+        target.focus({ preventScroll: true });
+      }
       return;
     }
     const [section, id] = route.split('/');
@@ -136,7 +173,6 @@
     eggToast.hidden = true;
     document.querySelectorAll('.easter-egg').forEach(el => { el.inert = true; });
     document.querySelector('.hub').inert = true;
-    document.querySelector('.topbar').inert = true;
     panelShell.dataset.section = section;
     panelTitle.textContent = section === 'projects' && id ? caseStudies[id].title : panelMeta[section].title;
     panelKicker.textContent = section === 'projects' && id ? 'Project case study' : panelMeta[section].kicker;
@@ -156,6 +192,7 @@
         [...panelBody.querySelectorAll('.filter-btn')].find(button => button.dataset.filter === filter)?.click();
       }
     }
+    addArrival(section);
     panelOverlay.classList.add('active');
     panelOverlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -185,11 +222,12 @@
       return;
     }
     const section = (route || currentRoute).split('/')[0];
-    tide.dataset.variant = ({about:'right', experience:'left', projects:'ripple', skills:'down', contact:'up'})[section];
+    tide.dataset.variant = route ? ({about:'lunar', experience:'slingshot', projects:'warp', skills:'constellation', contact:'signal'})[section] : 'return';
+    document.dispatchEvent(new CustomEvent('portfolio:travel', { detail: { from: currentRoute, to: route } }));
     void tide.offsetWidth;
     tide.classList.add('playing');
     tide.style.pointerEvents = 'auto';
-    // All three waves cover the viewport together at 310ms, including their stagger.
+    // The jump is fully covered at 310ms before the destination appears.
     // Keep the outgoing view intact until that covered interval.
     transitionTimer = setTimeout(() => {
       if (token === transitionVersion) commitRoute(route);

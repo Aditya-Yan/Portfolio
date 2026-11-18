@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#08171E" />
+  <meta name="theme-color" content="#050609" />
   <meta name="description" content="Aditya Reddy Yanamala builds thoughtful software at the intersection of AI, product engineering, and scalable systems." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Aditya Yanamala — Software Engineer & AI Builder" />
@@ -415,7 +415,7 @@
       .intro-copy { position:relative; left:auto; top:auto; max-width:unset; width:min(760px, 100%); margin:0 auto 22px; text-align:center; }
       .cta-row { justify-content:center; }
       .centerpiece { margin:0 auto; }
-      .bubble { position:relative !important; left:auto !important; right:auto !important; top:auto !important; bottom:auto !important; transform:none !important; width:auto; min-height:160px; }
+      .bubble { position:relative; left:auto; right:auto; top:auto; bottom:auto; transform:none; width:auto; min-height:160px; }
       .bubble-contact:hover, .bubble-contact:focus-visible { transform:translateY(-6px) scale(1.02); }
       .bubble-field {
         margin:26px auto 0; width:min(1000px, 100%);
@@ -739,29 +739,30 @@
   </style>
   <meta name="page-type" content="software">
   <meta name="site-kind" content="software">
-  <link rel="stylesheet" href="./assets/redesign.css">
   <link rel="stylesheet" href="./assets/sections.css">
-  <link rel="stylesheet" href="./assets/scattered-eggs.css">
   <link rel="stylesheet" href="./assets/portfolio-features.css">
-  <link rel="stylesheet" href="./assets/hub-desktop.css">
   <link rel="stylesheet" href="./assets/contact-skills.css">
-  <link rel="stylesheet" href="./assets/react-bits.css">
   <link rel="stylesheet" href="./assets/motion/motion.css">
+  <link rel="stylesheet" href="./assets/space.css">
+  <link rel="stylesheet" href="./assets/adventure.css">
   <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
-  <script defer src="/_vercel/insights/script.js"></script>
+  <script>
+    // Vercel serves this endpoint in production; plain local previews do not.
+    if (location.protocol !== 'file:' && !['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) {
+      const analytics = document.createElement('script');
+      analytics.defer = true;
+      analytics.src = '/_vercel/insights/script.js';
+      document.head.append(analytics);
+    }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <main id="main" class="scene">
-<div class="ocean-life" aria-hidden="true"><div class="sea-creature fish-one"><svg viewBox="0 0 140 70" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 35C51 2 94 2 116 35 94 68 51 68 24 35Z"/><path d="m25 35-20-20v40l20-20M64 14l15-9 8 12M64 56l15 9 8-12"/><circle cx="101" cy="30" r="3" fill="currentColor"/></svg></div><div class="sea-creature fish-two"><svg viewBox="0 0 140 70" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 35C51 2 94 2 116 35 94 68 51 68 24 35Z"/><path d="m25 35-20-20v40l20-20M64 14l15-9 8 12M64 56l15 9 8-12"/><circle cx="101" cy="30" r="3" fill="currentColor"/></svg></div><div class="sea-creature fish-three"><svg viewBox="0 0 140 70" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 35C51 2 94 2 116 35 94 68 51 68 24 35Z"/><path d="m25 35-20-20v40l20-20M64 14l15-9 8 12M64 56l15 9 8-12"/><circle cx="101" cy="30" r="3" fill="currentColor"/></svg></div><div class="sea-creature shrimp-one"><svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M89 41C100 58 91 81 69 82 49 82 35 68 40 53 44 42 57 39 65 44M90 40l17-13-3 18M89 40C75 9 47 10 31 18M85 38C69 20 46 26 25 23M43 53l13 7M40 65l15 1M47 75l12-6M60 81l6-10M76 80V68M86 71l-8-8M50 49l-2-11M61 43l-2-9M61 82l-8 10M75 80l7 11"/><circle cx="87" cy="44" r="2" fill="currentColor"/></svg></div><div class="sea-creature shrimp-two"><svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M89 41C100 58 91 81 69 82 49 82 35 68 40 53 44 42 57 39 65 44M90 40l17-13-3 18M89 40C75 9 47 10 31 18M85 38C69 20 46 26 25 23M43 53l13 7M40 65l15 1M47 75l12-6M60 81l6-10M76 80V68M86 71l-8-8M50 49l-2-11M61 43l-2-9M61 82l-8 10M75 80l7 11"/><circle cx="87" cy="44" r="2" fill="currentColor"/></svg></div><svg class="seaweed" viewBox="0 0 170 180" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"><path d="M85 180C30 130 110 110 70 60M95 180c50-55-20-75 20-135M65 180C8 130 50 80 30 40M110 180c45-20 10-65 44-90"/></svg></div>
-    <div class="ocean-wash" aria-hidden="true"></div>
-    <div class="ocean-wave w1" aria-hidden="true"></div>
-    <div class="ocean-wave w2" aria-hidden="true"></div>
-    <div class="ocean-wave w3" aria-hidden="true"></div>
-
+    <canvas id="cosmos" aria-hidden="true"></canvas>
     <button type="button" class="decor-item decor-ball easter-egg" aria-label="Take a shot" title="Take a shot">
       <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="34" fill="#d98947" stroke="#f4d5bd" stroke-width="3"/><path d="M60 26v68M26 60h68M37 34c25 16 25 36 0 52M83 34c-25 16-25 36 0 52" stroke="#fff2e4" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
       <span>Click me · take a shot</span>
@@ -778,106 +779,38 @@
       <svg viewBox="0 0 90 120"><path d="M24 18h35c7 0 12 5 12 12v60c0 7-5 12-12 12H24c-7 0-12-5-12-12V30c0-7 5-12 12-12Z" fill="#A1CCDC" stroke="#f8fbfe" stroke-width="3"/><path d="M26 18v84" stroke="#71B7D5" stroke-width="4"/><path d="M36 44h24M36 58h19M36 72h24" stroke="#f8fbfe" stroke-width="3" stroke-linecap="round"/></svg>
       <span>Click me · one more page</span>
     </button>
-    <div class="decor-item decor-wave" aria-hidden="true">
-      <svg viewBox="0 0 90 90"><path d="M14 50c8 0 8-8 16-8s8 8 16 8 8-8 16-8 8 8 16 8" fill="none" stroke="#A1CCDC" stroke-width="5" stroke-linecap="round"/><path d="M14 62c8 0 8-8 16-8s8 8 16 8 8-8 16-8 8 8 16 8" fill="none" stroke="#71B7D5" stroke-width="5" stroke-linecap="round"/></svg>
-    </div>
     <button type="button" class="decor-item decor-valorant easter-egg" aria-label="Discover my Valorant peak rank" title="Discover my Valorant peak rank">
       <svg viewBox="0 0 100 80" aria-hidden="true"><path d="M9 7v35l28 31h24L9 7Zm82 0L55 49h24l12-14V7Z" fill="currentColor"/></svg>
       <span>Click me · Valorant</span>
     </button>
 
-    <div class="topbar">
-      <div class="brand">
-        <div class="brand-mark">A</div>
-        <div class="brand-copy">
-          <strong>Aditya Yanamala</strong>
-          <span>Software engineer · builder · UTD</span>
-        </div>
-      </div>
-      <div class="top-actions">
-        <div class="chip">A portfolio beneath the surface</div>
-        <a class="top-link" href="./Aditya_Yanamala_Resume.pdf" download>Download resume</a>
-      </div>
-    </div>
-
-    <section data-enter class="hub hero" aria-labelledby="hero-title">
-      <div class="intro-copy">
-        <div class="eyebrow">Software, with a human touch</div>
-        <h1 id="hero-title" data-moment="liquid-type" data-moment-opts='{"strength":0.3}'>Software engineer.<br>Researcher.<br><em>Builder.</em></h1>
-        <p>I’m Aditya, a CS student at UT Dallas building AI applications and real-world software. Take a look around.</p>
-        <div class="cta-row">
-          <button class="cta-primary" data-open-panel="projects">See projects ↗</button>
-          <a class="cta-secondary" href="https://github.com/Aditya-Yan" target="_blank" rel="noopener noreferrer">GitHub →</a>
-          <a class="cta-secondary" href="https://www.linkedin.com/in/aditya-yanamala/" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
-        </div>
-      </div>
-
-      <p class="egg-hint"></p>
-      <div class="centerpiece" data-enter-media aria-label="Aditya Yanamala profile">
-        <div class="center-top">
-          <div class="badge">A little about me</div>
-          <div class="badge">01 / Introduction</div>
-        </div>
-        <div class="headshot-frame">
-          <!-- Replace assets/headshot.png with your photo; keep the filename to update without editing this markup. -->
-          <img class="profile-photo" src="./assets/headshot.JPG" alt="Aditya Yanamala" width="600" height="600">
-        </div>
-        <div class="center-name">
-          <h2>Aditya Reddy<br>Yanamala</h2>
-          <p class="workplaces-label">Where I’ve worked</p>
-          <ul class="workplaces" aria-label="Workplaces">
-            <li><img class="ibm-logo" src="./assets/ibm.svg" alt="IBM"></li>
-            <li class="capital-workplace"><img src="./assets/capital-one.png" alt=""><span>Capital One</span></li>
-            <li><img class="alura-logo" src="./assets/alura.png" alt="Alura"></li>
-          </ul>
-        </div>
-
-
-      </div>
-
-      <div class="bubble-field" aria-label="Navigation bubbles">
-        <button class="bubble bubble-about" data-open-panel="about">
-          <div class="bubble-icon">✦</div>
-          <div>
-            <h3>About Me</h3>
-            <p>Who I am, what drives me, and what I’m like beyond the resume.</p>
-          </div>
-          <div class="bubble-arrow">→</div>
+    <section class="hub hero" data-enter="off" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="sr-only">Aditya Yanamala — portfolio solar system</h1>
+      <div class="bubble-field" aria-label="Portfolio star map">
+        <div class="black-hole" aria-hidden="true"><div class="black-hole-halo"></div><div class="black-hole-ring"></div><div class="black-hole-core"></div><div class="black-hole-disk"></div><div class="black-hole-front"></div></div>
+        <button class="bubble bubble-about orbital-node" data-open-panel="about" aria-label="Open About Me">
+          <span class="celestial-object" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="22" r="10"/><path d="M16 52v-5a16 16 0 0 1 32 0v5M20 52h24M27 21h10"/><circle class="icon-star" cx="9" cy="20" r="1.5"/><circle class="icon-star" cx="54" cy="42" r="1.5"/><path class="icon-guide" d="m10 20 8 17m31 9 5-4"/></svg></span>
+          <span class="orbit-label">About Me</span>
         </button>
 
-        <button class="bubble bubble-experience" data-open-panel="experience">
-          <div class="bubble-icon">⌘</div>
-          <div>
-            <h3>Experience</h3>
-            <p>IBM, Capital One, Alura, and research experience with measurable impact.</p>
-          </div>
-          <div class="bubble-arrow">→</div>
+        <button class="bubble bubble-experience orbital-node" data-open-panel="experience" aria-label="Open Experience">
+          <span class="celestial-object" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="22" width="44" height="30" rx="5"/><path d="M23 22v-6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v6M10 32l20 8h4l20-8M29 36v8h6v-8"/><circle class="icon-star" cx="10" cy="22" r="1.5"/><circle class="icon-star" cx="54" cy="52" r="1.5"/></svg></span>
+          <span class="orbit-label">Experience</span>
         </button>
 
-        <button class="bubble bubble-projects" data-open-panel="projects">
-          <div class="bubble-icon">◈</div>
-          <div>
-            <h3>Projects</h3>
-            <p>Explore featured builds like GlanceAR, SignVision, and Researchly.</p>
-          </div>
-          <div class="bubble-arrow">→</div>
+        <button class="bubble bubble-projects orbital-node" data-open-panel="projects" aria-label="Open Projects">
+          <span class="celestial-object" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="m32 9 23 13v24L32 59 9 46V22ZM9 22l23 13 23-13M32 35v24M21 16l23 13M21 29v11l11 6"/><circle class="icon-star" cx="32" cy="9" r="1.5"/><circle class="icon-star" cx="9" cy="46" r="1.5"/><circle class="icon-star" cx="55" cy="46" r="1.5"/></svg></span>
+          <span class="orbit-label">Projects</span>
         </button>
 
-        <button class="bubble bubble-skills" data-open-panel="skills">
-          <div class="bubble-icon">⤳</div>
-          <div>
-            <h3>Skills</h3>
-            <p>My engineering toolkit across AI, backend systems, cloud, and product work.</p>
-          </div>
-          <div class="bubble-arrow">→</div>
+        <button class="bubble bubble-skills orbital-node" data-open-panel="skills" aria-label="Open Skills">
+          <span class="celestial-object" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="m22 19-14 13 14 13M42 19l14 13-14 13M37 12 27 52"/><path class="icon-guide" d="m8 32 19 20 29-20-19-20Z"/><circle class="icon-star" cx="8" cy="32" r="1.5"/><circle class="icon-star" cx="37" cy="12" r="1.5"/><circle class="icon-star" cx="27" cy="52" r="1.5"/><circle class="icon-star" cx="56" cy="32" r="1.5"/></svg></span>
+          <span class="orbit-label">Skills</span>
         </button>
 
-        <button class="bubble bubble-contact" data-open-panel="contact">
-          <div class="bubble-icon">✉</div>
-          <div>
-            <h3>Let’s Connect</h3>
-            <p>Open the contact panel for email, links, and collaboration ideas.</p>
-          </div>
+        <button class="bubble bubble-contact orbital-node" data-open-panel="contact" aria-label="Open Let’s Connect">
+          <span class="celestial-object" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="17" width="46" height="33" rx="4"/><path d="m10 20 22 17 22-17M10 48l16-15M54 48 38 33"/><circle class="icon-star" cx="9" cy="17" r="1.5"/><circle class="icon-star" cx="55" cy="50" r="1.5"/></svg></span>
+          <span class="orbit-label">Let’s Connect</span>
         </button>
       </div>
 
@@ -901,7 +834,7 @@
     </section>
 
     <template id="about-template">
-      <div class="about-opening"><div class="about-portrait"><img src="./assets/headshot.JPG" alt="Aditya Yanamala" width="600" height="600"></div><div class="about-opening-copy"><span class="section-index">01 / THE PERSON BEHIND THE WORK</span><p>Aditya Reddy<br><em>Yanamala.</em></p><div class="about-location">Computer Science · UT Dallas<br>Austin / Dallas</div></div></div>
+      <div class="about-opening"><div class="about-portrait"><img src="./assets/headshot.JPG" alt="Aditya Yanamala" width="600" height="600" loading="lazy"></div><div class="about-opening-copy"><span class="section-index">01 / THE PERSON BEHIND THE WORK</span><p>Aditya Reddy<br><em>Yanamala.</em></p><div class="about-location">Computer Science · UT Dallas<br>Austin / Dallas</div></div></div>
       <div class="panel-hero">
         <div class="glass-card">
           <h3>A builder, researcher, and curious problem solver.</h3>
@@ -957,10 +890,10 @@
         </div>
       </div>
       <div class="experience-list">
-<article class="timeline-item"><div class="experience-brand"><img src="./assets/ibm.svg" alt="IBM"><small>IBM · Austin, TX</small></div><h3>Software Engineering Intern — watsonx Orchestrate</h3><span class="meta">Aug 2026 – Dec 2026</span><p>I work on bringing image inputs into watsonx Orchestrate, extending the information its agents can use beyond text. That also means handling how images fit into multimodal context windows and memory.</p><div class="experience-detail"><div><h4>Preinvoke image inputs</h4><p>Extended preinvoke plugins to accept image inputs, bringing image-based checks into the stage before an agent processes a request.</p></div><div><h4>Conversation-aware plugins</h4><p>Added conversation history across multiple chat-turn plugin calls. Preinvoke plugins can now use earlier messages as well as the current input, giving on-topic guardrails the context to assess whether a follow-up belongs in the conversation.</p></div><div><h4>Multimodal support</h4><p>Expanded support for image inputs while managing context-window and memory behavior. The work connects a new input type to the context an agent needs to respond.</p></div><div><h4>Security validation</h4><p>Built tools to detect prompt and code injection in image inputs. Image support introduces another place where instructions can enter a workflow, so validation is part of the feature itself.</p></div></div><div class="experience-outcome"><span>Image inputs</span><span>Conversation-aware preinvoke plugins</span><span>Agent security</span></div><div class="tag-row"><span>Python</span><span>AI systems</span><span>Agent security</span><span>Multimodal</span></div></article>
-<article class="timeline-item"><div class="experience-brand"><img src="./assets/capital-one.png" alt="Capital One"><small>Capital One · Dallas, TX</small></div><h3>Software Engineering Intern — Auto Loan Servicing Team</h3><span class="meta">Jun 2026 – Aug 2026</span><p>I worked on moving legacy EMR workloads to AWS Glue for the Auto Loan Servicing team. The migration focused on modernizing Spark data processing and reducing cloud infrastructure costs while preserving the data downstream teams depend on.</p><div class="experience-detail"><div><h4>Cloud migration</h4><p>Worked on replacing legacy EMR cluster workflows with AWS Glue pipelines, moving the processing into a serverless ETL environment.</p></div><div><h4>Data at scale</h4><p>Engineered Spark batch jobs to process 7M+ records per run and deliver structured data to more than 20 teams.</p></div><div><h4>Validation</h4><p>Worked on back-testing the pipeline against two years of historical data to check output integrity before production deployment.</p></div></div><div class="experience-outcome"><span>7M+ records per run</span><span>20+ downstream teams</span><span>Two years of historical validation</span></div><div class="tag-row"><span>AWS Glue</span><span>Apache Spark</span><span>AWS EMR</span><span>Data pipelines</span></div></article>
+<article class="timeline-item"><div class="experience-brand"><img src="./assets/ibm.svg" alt="IBM" width="24" height="10" loading="lazy"><small>IBM · Austin, TX</small></div><h3>Software Engineering Intern — watsonx Orchestrate</h3><span class="meta">Aug 2026 – Dec 2026</span><p>I work on bringing image inputs into watsonx Orchestrate, extending the information its agents can use beyond text. That also means handling how images fit into multimodal context windows and memory.</p><div class="experience-detail"><div><h4>Preinvoke image inputs</h4><p>Extended preinvoke plugins to accept image inputs, bringing image-based checks into the stage before an agent processes a request.</p></div><div><h4>Conversation-aware plugins</h4><p>Added conversation history across multiple chat-turn plugin calls. Preinvoke plugins can now use earlier messages as well as the current input, giving on-topic guardrails the context to assess whether a follow-up belongs in the conversation.</p></div><div><h4>Multimodal support</h4><p>Expanded support for image inputs while managing context-window and memory behavior. The work connects a new input type to the context an agent needs to respond.</p></div><div><h4>Security validation</h4><p>Built tools to detect prompt and code injection in image inputs. Image support introduces another place where instructions can enter a workflow, so validation is part of the feature itself.</p></div></div><div class="experience-outcome"><span>Image inputs</span><span>Conversation-aware preinvoke plugins</span><span>Agent security</span></div><div class="tag-row"><span>Python</span><span>AI systems</span><span>Agent security</span><span>Multimodal</span></div></article>
+<article class="timeline-item"><div class="experience-brand"><img src="./assets/capital-one.png" alt="Capital One" width="180" height="180" loading="lazy"><small>Capital One · Dallas, TX</small></div><h3>Software Engineering Intern — Auto Loan Servicing Team</h3><span class="meta">Jun 2026 – Aug 2026</span><p>I worked on moving legacy EMR workloads to AWS Glue for the Auto Loan Servicing team. The migration focused on modernizing Spark data processing and reducing cloud infrastructure costs while preserving the data downstream teams depend on.</p><div class="experience-detail"><div><h4>Cloud migration</h4><p>Worked on replacing legacy EMR cluster workflows with AWS Glue pipelines, moving the processing into a serverless ETL environment.</p></div><div><h4>Data at scale</h4><p>Engineered Spark batch jobs to process 7M+ records per run and deliver structured data to more than 20 teams.</p></div><div><h4>Validation</h4><p>Worked on back-testing the pipeline against two years of historical data to check output integrity before production deployment.</p></div></div><div class="experience-outcome"><span>7M+ records per run</span><span>20+ downstream teams</span><span>Two years of historical validation</span></div><div class="tag-row"><span>AWS Glue</span><span>Apache Spark</span><span>AWS EMR</span><span>Data pipelines</span></div></article>
 <article class="timeline-item"><div class="experience-brand"><span class="research-mark" aria-hidden="true">acm</span><small>ACM Research · Richardson, TX</small></div><h3>Research Lead</h3><span class="meta">Aug 2025 – Nov 2025</span><p>I led a five-person team studying how recurrent models can decode attempted speech from neural activity. We worked with more than 10,500 neural trials and focused on learning structure across different time scales.</p><div class="experience-detail"><div><h4>Model design</h4><p>Designed a Hierarchical Multiscale RNN with dynamic boundary detection. A Straight-Through Estimator let the model learn discrete boundaries as part of training.</p></div><div><h4>Research focus</h4><p>The architecture learns when to update representations at different time scales, rather than treating every time step identically.</p></div><div><h4>Results</h4><p>Improved word accuracy from 81.2% to 85.2% over the prior state-of-the-art RNN baseline described in the research.</p></div></div><div class="experience-outcome"><span>Five-person team</span><span>10,500+ neural trials</span><span>81.2% → 85.2% word accuracy</span></div><div class="tag-row"><span>PyTorch</span><span>HM-RNN</span><span>Speech decoding</span><span>Research leadership</span></div></article>
-<article class="timeline-item"><div class="experience-brand"><img src="./assets/alura.png" alt="Alura"><small>Alura · Frisco, TX</small></div><h3>ML / AI Engineering Intern</h3><span class="meta">May 2025 – Aug 2025</span><p>I built tools that connected content generation with day-to-day marketing work. The goal was to turn repeated manual steps into an autonomous agent workflow that could support multiple social accounts.</p><div class="experience-detail"><div><h4>Agent architecture</h4><p>Built and deployed an autonomous agent architecture integrated with ADK to automate marketing across 30+ accounts.</p></div><div><h4>Workflow automation</h4><p>Created content-generation and interaction tools and automated posting to social media platforms, saving more than six hours of manual work each week.</p></div></div><div class="experience-outcome"><span>30+ accounts</span><span>6+ hours saved per week</span></div><div class="tag-row"><span>Google ADK</span><span>Automation</span><span>AI agents</span><span>Python</span></div></article>
+<article class="timeline-item"><div class="experience-brand"><img src="./assets/alura.png" alt="Alura" width="2613" height="1027" loading="lazy"><small>Alura · Frisco, TX</small></div><h3>ML / AI Engineering Intern</h3><span class="meta">May 2025 – Aug 2025</span><p>I built tools that connected content generation with day-to-day marketing work. The goal was to turn repeated manual steps into an autonomous agent workflow that could support multiple social accounts.</p><div class="experience-detail"><div><h4>Agent architecture</h4><p>Built and deployed an autonomous agent architecture integrated with ADK to automate marketing across 30+ accounts.</p></div><div><h4>Workflow automation</h4><p>Created content-generation and interaction tools and automated posting to social media platforms, saving more than six hours of manual work each week.</p></div></div><div class="experience-outcome"><span>30+ accounts</span><span>6+ hours saved per week</span></div><div class="tag-row"><span>Google ADK</span><span>Automation</span><span>AI agents</span><span>Python</span></div></article>
 <article class="timeline-item"><div class="experience-brand"><span class="research-mark" aria-hidden="true">acm</span><small>ACM Research · Richardson, TX</small></div><h3>Research Intern</h3><span class="meta">Sep 2024 – Nov 2024</span><p>I worked in a five-member team on a compact CNN–GNN hybrid model for EEG-based brain-computer interfaces. The project explored noninvasive neural signals and the potential for efficient models in neurological disorder management.</p><div class="experience-detail"><div><h4>Exploration</h4><p>Researched CNNs, LSTMs, GNNs, and t-SNE while testing on the PhysioNet EEG Dataset.</p></div><div><h4>Hybrid modeling</h4><p>Combined convolutional and graph-based modeling in a compact architecture, with edge-computing use in mind.</p></div><div><h4>Results and recognition</h4><p>Improved accuracy from 65.07% to 84.31%. The team received ACM Best Research in Fall 2024.</p></div></div><div class="experience-outcome"><span>65.07% → 84.31% accuracy</span><span>ACM Best Research, Fall 2024</span></div><div class="tag-row"><span>EEG</span><span>CNN</span><span>GNN</span><span>Edge ML</span></div></article>
 </div>
     </template>
@@ -1132,8 +1065,8 @@
 
   <dialog class="reveal-dialog" id="rank-dialog" aria-labelledby="rank-title">
     <header class="reveal-head"><h2 id="rank-title">A competitive side</h2><button data-close-dialog="rank-dialog" aria-label="Close Valorant profile">Close ×</button></header>
-    <div class="rank-content"><img class="rank-emblem" src="./assets/radiant.png" alt="Valorant Radiant rank emblem"><h3>Radiant · #34 NA</h3><p>I previously ranked #34 in North America in Valorant.<br>My mains? Reyna and Jett.</p>
-      <div class="agent-grid"><div class="agent-card"><img src="./assets/reyna.webp" alt="Reyna from Valorant"><strong>Reyna</strong></div><div class="agent-card"><img src="./assets/jett.webp" alt="Jett from Valorant"><strong>Jett</strong></div></div>
+    <div class="rank-content"><img class="rank-emblem" src="./assets/radiant.png" alt="Valorant Radiant rank emblem" loading="lazy"><h3>Radiant · #34 NA</h3><p>I previously ranked #34 in North America in Valorant.<br>My mains? Reyna and Jett.</p>
+      <div class="agent-grid"><div class="agent-card"><img src="./assets/reyna.webp" alt="Reyna from Valorant" loading="lazy"><strong>Reyna</strong></div><div class="agent-card"><img src="./assets/jett.webp" alt="Jett from Valorant" loading="lazy"><strong>Jett</strong></div></div>
       <p class="asset-credit">VALORANT artwork © Riot Games. Assets via Valorant-API.</p>
     </div>
   </dialog>
@@ -1353,8 +1286,7 @@
   <script src="./assets/data/case-studies.js"></script>
   <script src="./assets/navigation.js"></script>
   <script src="./assets/basketball.js"></script>
-  <script src="./assets/ocean.js"></script>
-  <script type="module" src="./assets/react-bits.js"></script>
+  <script type="module" src="./assets/space.js"></script>
   <script type="module" src="./assets/motion/motion.js"></script>
   <script type="module" src="./assets/moments/moments.js"></script>
 </body>

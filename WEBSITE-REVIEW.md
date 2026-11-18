@@ -2,6 +2,12 @@
 
 Reviewed November 8, 2026. Recommendations 2, 4 and 5 are now implemented. Recommendation 7 is implemented for basketball only, as requested; the notebook remains unchanged. Recommendations 1, 3, 6 and 8 remain proposals. The original review notes below describe the reasons for each recommendation.
 
+Immersive-space update, November 17, 2026: the landing system now has perspective, independently inclined 3D orbits, globe-style drag rotation, inertial release, mouse/touch/keyboard controls, and zoom. A Destinations menu keeps every page and easter egg directly accessible. Subpages have distinct arrival panoramas, Experience has role shortcuts, and section changes use destination-specific travel effects. The five original subpage templates and six case-study descriptions retain their information.
+
+Wide-universe polish, November 17, 2026: the desktop map now spans the screen, with shooting stars and decorative orbiters. All destination icons are visible initially; live overlap avoidance and edge clamping have been removed so icons move smoothly with the 3D projection and can naturally pass behind objects or out of view. Mobile layouts and touch controls are retained.
+
+Ambient-space update, November 17, 2026: eight curved orbital star trails, nine varied decorative planets, and an icy asteroid belt now surround the black hole. These objects are nonclickable, rotate with the 3D view, and respect pause/reduced motion. The belt uses fewer particles on mobile.
+
 ## 1. Project screenshots and short demos — highest impact
 
 The six project cards have custom HTML illustrations, but visitors cannot yet see the actual applications. Add real screenshots or short muted demos for GlanceAR, SignVision and Researchly first. Keep the existing descriptions, links, status disclosures and illustrations; let visitors open the real media alongside them. Real app evidence would do more for the portfolio than another decorative effect.
