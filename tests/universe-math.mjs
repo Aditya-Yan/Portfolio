@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {normalize, rotate, axisAngle, between, multiply, arcball, orbitPoint, project} from '../assets/universe-math.mjs';
+const close=(actual,expected)=>actual.forEach((n,i)=>assert.ok(Math.abs(n-expected[i])<1e-9,`${actual} ≈ ${expected}`));
+close(rotate([1,0,0],axisAngle([0,1,0],Math.PI/2)),[0,0,-1]);
+close(rotate([1,0,0],between([1,0,0],[-1,0,0])),[-1,0,0]);
+const a=arcball(720,450,1440,900),b=arcball(1020,260,1440,900),q=between(a,b);
+close(rotate(a,q),b);
+let orientation=[0,0,0,1];for(let i=0;i<1000;i++)orientation=multiply(axisAngle(normalize([1,2,3]),.015),orientation);
+assert.ok(Math.abs(Math.hypot(...orientation)-1)<1e-12);
+assert.ok(Math.abs(Math.hypot(...rotate([1,2,3],orientation))-Math.sqrt(14))<1e-9);
+const tilted={u:[1,0,0],v:normalize([0,1,1]),radius:2,eccentricity:1};
+close(orbitPoint(tilted,0),[2,0,0]);
+assert.ok(orbitPoint(tilted,Math.PI/2)[2]>1,'inclined orbits leave the screen plane');
+const camera={x:0,y:0,distance:5,scale:100,zoom:1,orientation:[0,0,0,1]};
+assert.ok(project([1,0,1],camera).x>project([1,0,-1],camera).x,'near geometry receives perspective magnification');
+console.log('PASS arcball rotation, antipodal drag, normalized camera, tilted orbits, and perspective depth');

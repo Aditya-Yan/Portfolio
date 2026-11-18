@@ -1,0 +1,181 @@
+/* Three-dimensional flight map. Labels and direct navigation stay on the screen plane. */
+.scene .hub { cursor:grab; touch-action:none; }
+.scene .hub.is-dragging,.scene .hub.is-dragging * { cursor:grabbing!important; user-select:none; }
+.scene .hub:focus-visible { outline:2px solid #dfbd84; outline-offset:-8px; }
+#cosmos-front { position:absolute; inset:0; width:100%; height:100%; z-index:5; pointer-events:none; }
+.hub .black-hole { z-index:4; }
+.hub .black-hole-disk,.hub .black-hole-front { display:none; }
+.hub .orbital-node { opacity:var(--node-alpha,1); cursor:pointer; }
+.hub .orbital-node .celestial-object,.hub .egg-object>svg { transform:scale(var(--node-scale,1)); transform-origin:center; }
+.hub .orbital-node .celestial-object { filter:drop-shadow(0 0 6px #a6cfff40); }
+.hub .orbital-node .orbit-label { color:#e4e9f2; font-size:11px; padding:2px 5px; border-radius:4px; background:#04060a9c; text-shadow:0 1px 5px #000; }
+.hub .orbital-node:focus-visible { opacity:1; }
+.hub .orbital-node:hover .celestial-object { filter:drop-shadow(0 0 8px #ffe2a866); }
+.hub .orbital-node::selection { background:none; }
+.universe-instructions { position:absolute; bottom:86px; left:50%; width:max-content; max-width:90%; margin:0; transform:translateX(-50%); color:#9faabb; font:400 10px/1.5 Inter,sans-serif; letter-spacing:.045em; pointer-events:none; }
+.cosmos-controls { z-index:20; cursor:default; }
+.destination-menu { position:absolute; right:24px; top:22px; z-index:24; color:#dce5f0; cursor:default; }
+.destination-menu summary { display:flex; align-items:center; justify-content:center; gap:9px; min-height:44px; padding:11px 16px; border:1px solid #bacfed33; border-radius:999px; background:#0b1019d9; backdrop-filter:blur(16px); list-style:none; font:400 11px/1.4 Inter,sans-serif; cursor:pointer; }
+.destination-menu summary::-webkit-details-marker { display:none; }
+.destination-menu summary>svg { width:18px; height:18px; stroke:currentColor; stroke-width:1.25; }
+.destination-menu[open] summary { border-color:#dfbd8477; color:#f2dab1; }
+.destination-menu nav { position:absolute; top:55px; right:0; width:260px; padding:10px; border:1px solid #b6cce52e; border-radius:14px; background:#0b101af5; box-shadow:0 20px 70px #000a; backdrop-filter:blur(20px); }
+.destination-menu nav>a { display:flex; align-items:center; gap:14px; min-height:47px; padding:10px 14px; border-radius:6px; font:400 12px Inter,sans-serif; }
+.destination-menu nav>a:hover,.destination-menu nav>a:focus-visible { color:#f3d8ad; background:#dfbd840c; }
+.destination-menu nav>a>svg { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.2; }
+.destination-surprises { display:flex; justify-content:space-between; margin-top:6px; border-top:1px solid #c0d3ec20; padding:10px 3px 0; }
+.destination-surprises>button { display:grid; place-items:center; width:44px; height:44px; padding:8px; background:none; border:0; border-radius:8px; color:#d79591; cursor:pointer; }
+.destination-surprises>button:hover { background:#ffffff0b; }
+.destination-surprises svg { width:28px; height:28px; }
+/* Arrival panoramas: different environments, with no new portfolio claims. */
+.panel-overlay { background:#03070df0; }
+.panel-shell { --planet:#b5cadf; background:radial-gradient(ellipse at 95% 5%,color-mix(in srgb,var(--planet) 9%,transparent),transparent 43%),linear-gradient(160deg,#070b12,#06090f); }
+.panel-shell::before { opacity:.38; border-style:dashed; }
+.panel-topbar { background:#080d16f5; border-bottom-color:#b5cbe52b; }
+.panel-title-wrap::before { box-shadow:0 0 28px color-mix(in srgb,var(--planet) 22%,transparent); }
+.panel-title-wrap small { letter-spacing:.16em; }
+.panel-title-wrap h2 { font-size:35px; }
+.section-nav { gap:26px; }
+.section-nav a { position:relative; padding-left:13px; }
+.section-nav a::before { content:''; position:absolute; left:0; top:19px; width:4px; height:4px; border-radius:50%; background:currentColor; opacity:.6; }
+.section-nav a[aria-current]::before { box-shadow:0 0 10px var(--planet); opacity:1; }
+.arrival-scene { position:relative; isolation:isolate; height:174px; margin:0 0 36px; overflow:hidden; border:1px solid color-mix(in srgb,var(--planet) 22%,transparent); border-radius:12px; background:radial-gradient(ellipse at 65% 90%,color-mix(in srgb,var(--planet) 11%,transparent),transparent 55%),#060b13; }
+.arrival-stars { position:absolute; inset:0; opacity:.7; background:radial-gradient(circle at 17% 23%,#fff 0 1px,transparent 2px),radial-gradient(circle at 71% 41%,#aac9f5 0 .5px,transparent 1.5px),radial-gradient(circle at 48% 80%,#cbd9ef 0 1px,transparent 2px); background-size:151px 107px,83px 139px,229px 153px; }
+.arrival-grid { position:absolute; inset:45% -10% -80%; transform:perspective(300px) rotateX(58deg); background:linear-gradient(#a8c8ef0c 1px,transparent 1px),linear-gradient(90deg,#a8c8ef0b 1px,transparent 1px); background-size:42px 42px; mask-image:linear-gradient(transparent,#000 40%); }
+.arrival-world { position:absolute; top:28px; right:19%; width:205px; height:205px; border-radius:50%; background:radial-gradient(circle at 30% 24%,#d5d6ce,#8a9494 23%,#3d4d59 51%,#0c1522 76%); box-shadow:inset -28px -14px 40px #000c,0 0 0 1px #d1deeb55,0 0 40px #cbd2df12,0 0 100px #a9c7ec0b; }
+.arrival-world>i { position:absolute; inset:0; border-radius:50%; background:radial-gradient(circle at 34% 29%,#0d182c33 0 10px,transparent 12px),radial-gradient(circle at 20% 48%,#111b2855 0 20px,transparent 23px),radial-gradient(circle at 58% 20%,#111b2855 0 7px,transparent 9px),radial-gradient(circle at 49% 46%,#080f1a55 0 13px,transparent 16px); }
+.arrival-orbit { position:absolute; border:1px solid color-mix(in srgb,var(--planet) 30%,transparent); border-radius:50%; width:650px; height:210px; right:-4%; top:10px; transform:rotate(-17deg); }
+.arrival-orbit.orbit-b { width:900px; height:320px; top:-45px; right:-8%; opacity:.5; transform:rotate(12deg); }
+.arrival-satellite { position:absolute; left:19%; top:36%; width:9px; height:9px; border-radius:50%; background:#e7edf8; box-shadow:0 0 12px #ccddff,0 0 0 6px #c1dbff08,0 0 0 7px #c1dbff25; }
+.arrival-constellation { display:none; position:absolute; inset:0; width:100%; height:100%; fill:none; stroke:#aac9ec66; stroke-width:.8; }
+.arrival-constellation circle { fill:#e5f0ff; stroke:none; filter:drop-shadow(0 0 4px #bddbff); }
+.arrival-scene[data-world=experience] .arrival-world { top:-20px; width:195px; height:195px; right:24%; background:repeating-linear-gradient(167deg,transparent 0 12px,#f5d9ac14 13px 20px,transparent 21px 28px),radial-gradient(circle at 29% 25%,#efdab2,#ac8a55 27%,#59442e 50%,#15151c 77%); }
+.arrival-scene[data-world=experience] .arrival-world>i { inset:65px -71px; height:55px; border:10px double #dfc08a66; border-top-color:#dfc08a22; border-radius:50%; background:none; transform:rotate(-24deg); box-shadow:0 0 0 4px #dfc08a12,0 0 0 8px #dfc08a08; }
+.arrival-scene[data-world=projects] .arrival-world { top:18px; right:22%; width:190px; height:190px; background:radial-gradient(ellipse at 28% 21%,#f0c5a4,#ae7256 25%,#643a32 50%,#13141f 80%); }
+.arrival-scene[data-world=projects] .arrival-world>i { background:repeating-linear-gradient(-28deg,transparent 0 16px,#efbda11c 17px 21px,transparent 22px 32px); }
+.arrival-scene[data-world=projects] .arrival-satellite { width:22px; height:22px; border-radius:3px; transform:rotate(-25deg); background:linear-gradient(135deg,#becfdf,#455974 56%,#172236); box-shadow:0 0 0 1px #cfdef055,7px 6px 0 #080e18; }
+.arrival-scene[data-world=skills] .arrival-world { display:none; }
+.arrival-scene[data-world=skills] .arrival-constellation { display:block; }
+.arrival-scene[data-world=skills] .arrival-orbit { opacity:.25; }
+.arrival-scene[data-world=contact] .arrival-world { width:26px; height:26px; right:36%; top:42%; background:#fff1d4; box-shadow:0 0 16px #fff0c9,0 0 60px #dfbd8477,0 0 140px #dfbd8422; }
+.arrival-scene[data-world=contact] .arrival-world>i { inset:-34px; background:none; border:1px solid #dfbd8466; }
+.arrival-scene[data-world=contact] .arrival-world>b { position:absolute; inset:-68px; border:1px solid #dfbd8440; border-radius:50%; box-shadow:0 0 0 36px #dfbd8405,0 0 0 37px #dfbd841a,0 0 0 76px #dfbd8403,0 0 0 77px #dfbd8412; }
+.arrival-scene[data-world=contact] .arrival-satellite { width:25px; height:25px; left:22%; top:43%; border-radius:0; background:none; border:1px solid #dfbd84aa; box-shadow:none; transform:rotate(45deg); }
+/* Readable destination interiors and connected travel paths. */
+.about-opening { border-color:#b8cadc24; }
+.about-portrait { border-color:#d0deef55; box-shadow:0 0 0 9px #afc9e508,0 0 0 10px #afc9e525,0 0 0 23px #afc9e504; }
+.about-grid .glass-card { background:linear-gradient(140deg,#c9d9ed08,#07101a); border-color:#bfd3ec25; }
+.stat-box { position:relative; padding-left:16px; }
+.stat-box::before { content:''; position:absolute; left:0; top:26px; width:4px; height:4px; border-radius:50%; background:var(--planet); box-shadow:0 0 9px color-mix(in srgb,var(--planet) 35%,transparent); }
+.role-index { display:flex; flex-wrap:wrap; gap:9px; margin:0 0 34px; padding-bottom:22px; border-bottom:1px solid #dfbd8426; }
+.role-index a { display:flex; align-items:center; gap:9px; min-height:44px; padding:10px 14px; border:1px solid #dfbd8430; border-radius:999px; color:#d9c6a7; background:#dfbd8405; font:400 11px Inter,sans-serif; }
+.role-index a::before { content:''; width:4px; height:4px; border:1px solid #e4c694; border-radius:50%; }
+.role-index a:hover { background:#dfbd8410; border-color:#dfbd8488; }
+.experience-list { border-left-style:dashed; margin-left:10px; }
+.timeline-item { padding-left:12px; }
+.timeline-item::before { width:11px; height:11px; left:-39px; box-shadow:0 0 0 6px #080c14,0 0 0 7px #dfbd8455,0 0 22px #dfbd8433; }
+.experience-outcome { background:linear-gradient(100deg,#dfbd840e,#dfbd8403); }
+.project-card { position:relative; background:linear-gradient(155deg,#101823,#080e17); border-color:#c4a58b35; }
+.project-art { border-radius:7px; background:radial-gradient(ellipse at 85% 0,#e0ae8030,transparent 65%),#101722; }
+.project-card:hover { border-color:#dcb99899; box-shadow:0 12px 40px #0004; }
+.case-flow { gap:16px; }
+.case-flow li { border-radius:12px; background:linear-gradient(140deg,#cfa48211,#080f1a); }
+.case-flow li+li::before { color:#e1bb92; }
+.case-takeaway { background:linear-gradient(90deg,#d5a2860e,#d5a28603); border-radius:0 12px 12px 0; }
+.skill-card { position:relative; padding-left:26px; border-left:1px solid #accded33; }
+.skill-card::after { content:''; position:absolute; left:-4px; top:44px; width:7px; height:7px; border-radius:50%; background:#d9edff; box-shadow:0 0 14px #accded77,0 0 0 6px #accded09; }
+.skill-card li { background:linear-gradient(135deg,#b9d9ff0a,#07111e); border-color:#accded3b; }
+.evidence-links { padding-top:18px; border-top:1px dashed #accded25; }
+.contact-letter { background:radial-gradient(ellipse at top right,#dfbd840c,transparent 55%),#0b131f; border-color:#dfbd8455; box-shadow:0 0 0 5px #dfbd8403,0 25px 80px #0004; }
+.contact-letter textarea { background:#050a12; border-color:#a5bcda33; }
+.contact-letter:focus-within { border-color:#e8ca98aa; box-shadow:0 0 45px #dfbd840c; }
+.letter-stamp { border-style:solid; box-shadow:0 0 0 5px #dfbd8407,0 0 0 6px #dfbd8418; }
+.reveal-dialog,.aim-dialog { background:radial-gradient(ellipse at 80% 0,#8fb9ef10,transparent 50%),#0a111d; border-color:#a8c9f244; }
+/* Destination-specific jump sequences. All cover the viewport before content changes. */
+#tide-transition { --jump-accent:#d5c29c; }
+#tide-transition[data-variant] i { inset:0; width:100%; height:100%; border-radius:0; background:#060c16; clip-path:circle(0% at var(--jump-x,50vw) var(--jump-y,50vh)); opacity:1; }
+#tide-transition[data-variant] i:nth-child(1) { background:color-mix(in srgb,var(--jump-accent) 20%,#050a13); }
+#tide-transition[data-variant] i:nth-child(2) { background:radial-gradient(ellipse at center,color-mix(in srgb,var(--jump-accent) 12%,#060c16),#060c16 65%); }
+#tide-transition[data-variant] i:nth-child(3) { background:#070d17; }
+#tide-transition.playing[data-variant] i { animation:destination-iris 580ms cubic-bezier(.45,0,.2,1) both; }
+#tide-transition.playing[data-variant] i:nth-child(2) { animation-delay:20ms; }
+#tide-transition.playing[data-variant] i:nth-child(3) { animation-delay:40ms; }
+@keyframes destination-iris { 0% { clip-path:circle(0% at var(--jump-x,50vw) var(--jump-y,50vh)); opacity:1; } 40%,65% { clip-path:circle(160% at var(--jump-x,50vw) var(--jump-y,50vh)); opacity:1; } 100% { clip-path:circle(160% at var(--jump-x,50vw) var(--jump-y,50vh)); opacity:0; } }
+.jump-streaks,.jump-gate,.jump-network { position:absolute; inset:0; pointer-events:none; opacity:0; }
+.jump-streaks { z-index:4; overflow:hidden; }
+.jump-streaks span { position:absolute; left:50%; top:50%; width:100px; height:1px; transform-origin:0 50%; background:linear-gradient(90deg,transparent,var(--jump-accent)); }
+.playing .jump-streaks { opacity:1; }
+.playing .jump-streaks span { animation:jump-star 590ms ease-in both; animation-delay:var(--delay); }
+@keyframes jump-star { 0% { transform:rotate(var(--angle)) translateX(var(--distance)) scaleX(.05); opacity:0; } 35% { opacity:.7; } 80%,100% { transform:rotate(var(--angle)) translateX(95vmax) scaleX(4); opacity:0; } }
+.jump-gate { z-index:5; inset:calc(50% - 110px); width:220px; height:220px; border:1px solid var(--jump-accent); border-radius:50%; box-shadow:0 0 0 12px #ffffff05,0 0 0 13px color-mix(in srgb,var(--jump-accent) 35%,transparent),0 0 60px color-mix(in srgb,var(--jump-accent) 16%,transparent); }
+.playing .jump-gate { animation:jump-gate 620ms ease-out both; }
+@keyframes jump-gate { 0% { opacity:0; transform:scale(.1); } 35% { opacity:.75; } 100% { opacity:0; transform:scale(7); } }
+#tide-transition[data-variant=lunar] { --jump-accent:#cbddec; }
+#tide-transition[data-variant=lunar] .jump-gate { border-width:2px; box-shadow:inset 0 0 30px #d1e5ff22,0 0 50px #d1e5ff33; }
+#tide-transition[data-variant=slingshot] { --jump-accent:#dfbd84; }
+#tide-transition.playing[data-variant=slingshot] .jump-gate { animation:jump-slingshot 620ms ease-out both; width:400px; height:110px; margin-left:-90px; margin-top:55px; border:4px double #dfbd84aa; }
+@keyframes jump-slingshot { 0% { opacity:0; transform:rotate(-38deg) scale(.2); } 35% { opacity:.9; } 100% { opacity:0; transform:rotate(22deg) scale(8); } }
+#tide-transition[data-variant=warp] { --jump-accent:#cda88c; }
+#tide-transition[data-variant=warp] .jump-streaks span { height:2px; }
+#tide-transition[data-variant=warp] .jump-gate { border-style:dashed; }
+#tide-transition[data-variant=constellation] { --jump-accent:#accded; }
+#tide-transition[data-variant=constellation] .jump-gate { display:none; }
+.jump-network { z-index:5; }
+.jump-network svg { width:100%; height:100%; stroke:#c5e2ff; fill:none; stroke-width:.8; }
+.jump-network circle { fill:#e1f1ff; }
+.playing[data-variant=constellation] .jump-network { animation:jump-network 620ms ease-out both; }
+@keyframes jump-network { 0% { opacity:0; transform:scale(.8); } 38% { opacity:.75; } 100% { opacity:0; transform:scale(1.6); } }
+#tide-transition[data-variant=signal] { --jump-accent:#e4c998; }
+#tide-transition[data-variant=signal] .jump-gate { box-shadow:0 0 0 40px #dfbd8404,0 0 0 41px #dfbd8466,0 0 0 85px #dfbd8404,0 0 0 86px #dfbd8444; }
+#tide-transition[data-variant=return] { --jump-accent:#e3c38f; }
+#tide-transition.playing[data-variant=return] .jump-gate { animation-direction:reverse; }
+@media(max-width:720px) {
+  .destination-menu { top:16px; right:16px; }
+  .destination-menu summary { font-size:10px; padding:10px 13px; }
+  .destination-menu nav { width:250px; }
+  .universe-instructions { bottom:84px; font-size:9px; }
+  .hub .orbital-node .orbit-label { font-size:10px; }
+  .hub .orbital-node { width:68px; height:64px; }
+  .hub .orbital-node .celestial-object { width:34px; height:34px; }
+  .hub .egg-object>svg { width:33px; height:34px; }
+  .cosmos-controls { padding:4px 6px; gap:1px; }
+  .cosmos-controls button { width:44px; height:44px; }
+  .panel-title-wrap h2 { font-size:28px; }
+  .section-nav { gap:15px; }
+  .section-nav a { padding-left:9px; font-size:10px; }
+  .section-nav a::before { width:3px; height:3px; }
+  .arrival-scene { height:136px; margin-bottom:28px; }
+  .arrival-world { right:7%; top:26px; width:160px; height:160px; }
+  .arrival-scene[data-world=experience] .arrival-world { width:150px; height:150px; right:23%; }
+  .arrival-scene[data-world=experience] .arrival-world>i { inset:55px -55px; height:40px; border-width:7px; }
+  .arrival-scene[data-world=projects] .arrival-world { width:150px; height:150px; right:13%; }
+  .arrival-orbit { right:-100%; }
+  .arrival-orbit.orbit-b { right:-140%; }
+  .arrival-satellite { left:12%; }
+  .role-index { gap:7px; margin-bottom:25px; }
+  .role-index a { padding:9px 11px; font-size:10px; }
+  .skill-card { padding-left:20px; }
+}
+@media(max-width:360px),(max-height:560px) {
+  .hub .orbital-node { width:62px; height:58px; }
+  .hub .orbital-node .orbit-label { font-size:9px; }
+  .destination-menu { top:12px; right:12px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  #tide-transition { display:none!important; }
+  .jump-streaks,.jump-gate,.jump-network { animation:none!important; }
+}
+
+/* Projected bodies move through one composited transform, without live label shuffling. */
+.hub .orbital-node,.hub .orbital-node:hover,.hub .orbital-node:focus-visible {
+  left:0!important; top:0!important;
+  transform:translate3d(var(--orbit-x,50vw),var(--orbit-y,50vh),0) translate(-50%,-50%)!important;
+  will-change:transform; backface-visibility:hidden; contain:layout style;
+}
+.hub .black-hole { z-index:30; }
+#cosmos-front { z-index:31; }
+.cosmos-controls,.destination-menu { z-index:80; }
+
+.hub .celestial-object svg :is(path,circle,rect,line) { vector-effect:non-scaling-stroke; }
+/* Avoid a flash at legacy positions while the initial orbit geometry is prepared. */
+.scene>.easter-egg,.hub .orbital-node:not([data-depth]) { visibility:hidden; pointer-events:none; }
